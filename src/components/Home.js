@@ -51,9 +51,13 @@ const Home = (props) => {
         <p>CURRENTLY LOOKING FOR OPPORTUNITIES </p>
       </div>
     </section>
+    <div id="about-me"></div>
     <AboutMe props={props} />
+    <div id='skills'></div>
     <Skills />
+    <div id='projects'></div>
     <Projects />
+    <div id='contact'></div>
     <Contact />
   </main>
 }

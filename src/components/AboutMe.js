@@ -100,7 +100,7 @@ const AboutMe = (props) => {
 
   //  SCREEN MAX SIZE OF 610px - NEED BUFFER OF 100px
 
-  return <section id='about-me'>
+  return <section className='about-me'>
     <div className="brand-statement">
       <div className="brand-header">
         <span className="icon">
@@ -166,8 +166,6 @@ const AboutMe = (props) => {
 
         </div>
       })}
-
-
     </div>
   </section>
 }

@@ -98,9 +98,8 @@ const Skills = () => {
     }
   ]
 
-  return <section id='skills'>
+  return <section className='skills'>
     <div className="skills-container">
-
       <div className="skills">
         <h2>Confident:</h2>
         <div className="confident-skills">

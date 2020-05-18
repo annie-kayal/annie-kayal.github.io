@@ -27,7 +27,7 @@ const Contact = () => {
         setError(err.text)
       })
   }
-  return <section id='contact'>
+  return <section className='contact'>
     <div className='get-in-touch'>
       <h1>Get In Touch</h1>
       <div className="logos">
@@ -36,13 +36,18 @@ const Contact = () => {
       </div>
     </div>
     <h2>Or Email Me <i className="fas fa-arrow-down"></i></h2>
-    {success === '' ? 
+    {success === '' ?
       <Email
         email={email}
         handleChange={(e) => handleChange(e)}
         handleSubmit={(event) => handleSubmit(event)}
       />
-      : success === 'OK' ? <h1>Thanks for your email! I'll get back to you as soon as I can</h1> : null}
+      : success === 'OK' ?
+        <div className="email-sent">
+          <h1>Thanks for your email! I'll get back to you as soon as I can.</h1>
+        </div>
+        :
+        null}
     <Footer />
   </section>
 

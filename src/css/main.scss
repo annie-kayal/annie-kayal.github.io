@@ -23,8 +23,15 @@ html {
 }
 
 // MOBILE QUERY - SCREEN SMALLER THAN 720px
-.buffer { 
-  height: 115px;
+#about-me, #projects { 
+  height: 12vh;
+  background-image: linear-gradient(#FFF1EE, #FFFEFE)
+}
+
+#skills, #contact {
+  height: 14vh;
+  width: 100vw;
+  background-image: linear-gradient( #FFFEFE ,#FFF1EE)
 }
 
 main {
@@ -45,19 +52,19 @@ main {
     justify-content: center;
     text-align: center;
     p {
-      font-size: 30px;
+      font-size: 4vmax;
       color: #353535;
       font-variant: small-caps;
     }
   }
   .currently {
     font-family: 'Lato', sans-serif;
-    width: 250px;
+    width: 60vw;
     display: flex;
     align-self: center;
     text-align: center;
     font-style: 900;
-    font-size: 20px;
+    font-size: 4vmin;
     letter-spacing: 5px;
     border: 10px double #FFFEFE;
     -webkit-text-stroke-width: 1px;
@@ -65,8 +72,8 @@ main {
     color: transparent;
     text-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.45), 0 0 30px rgba(255,255,255,0.25), 0 0 30px rgba(255,255,255,0.1);
     opacity: 0;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 1vmax;
+    margin-right: 1vmax;
   }
   .showAvailable {
     animation: glow linear 1s;
@@ -79,13 +86,13 @@ main {
 .header {
   animation: slideIn linear 5s;
   animation-fill-mode: forwards;
-  background-image: linear-gradient( #FFF1EE, #FFFEFE);
+  background-color: #FFF1EE;
   position: fixed;
   width: 100vw;
-  height: 100px;
-  font-size: 22px;
+  max-height: 25vh;
+  font-size: 5.5vmin;
   font-variant: small-caps;
-  letter-spacing: 2px;
+  letter-spacing: 2vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,6 +107,7 @@ main {
       justify-content: center;
       align-items: center;
       background-color: #FFFEFE;
+      letter-spacing: 1vmin;
         ul {
           width: 95%;
           display: flex;
@@ -135,7 +143,7 @@ main {
   // About Section
 
 
-  #about-me {
+  .about-me {
     background-color: #FFFEFE;
     font-family: 'Aleo', sans-serif;
     display: flex;
@@ -143,7 +151,7 @@ main {
     align-items: center;
     color: #353535;
     h1 {
-      font-size: 4vmax;
+      font-size: 3vmax;
     }
     .brand-statement {
       width: 95%;
@@ -189,10 +197,10 @@ main {
         align-items: center;
         border-top: 2px solid #EFE5E2;
         border-bottom: 2px solid #EFE5E2;
-        font-size: 25px;
-        margin-bottom: 10px;
+        font-size: 2vmin;
+        margin-bottom: 1vmax;
         span {
-          font-size: 15px;
+          font-size: 1.4vmax;
           font-style: italic;
         }
         .interest {
@@ -202,7 +210,7 @@ main {
           justify-content: flex-start;
           width: 98%;
           height: 160px;
-          font-size: 20px;
+          font-size: 2vmax;
           color: #353535;
           margin-bottom: 5px;
           div {
@@ -214,7 +222,7 @@ main {
             justify-content: space-evenly;
           }
           h3 {
-            font-size: 20px;
+            font-size: 2.5vmax;
             font-weight: bold;
           }
           small {
@@ -223,7 +231,7 @@ main {
         }
         .listening {
           // background-color: seashell;
-          height: 250px;
+          height: 25vh;
           h4 {
             font-weight: bold;
           }
@@ -281,7 +289,7 @@ main {
     }
   
 
-#skills {
+.skills {
   background-color: #FFF1EE;
   display: flex;
   flex-direction: column;
@@ -349,7 +357,7 @@ main {
         }
         #JSON {
           height: 2vh;
-          width: 10vw;
+          width: 11vw;
         }
         #bulma {
           height: 35px;
@@ -364,7 +372,7 @@ main {
   }
 }
 
-#projects {
+.projects {
   height: 90vh;
   background-color: #FFFEFE;
   color: #353535;
@@ -391,42 +399,56 @@ main {
       }
     }
     .selected-project {
-      background-color: green;
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      .tech {
-        background-color: hotpink;
-        font-size: 3vmin;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 90%;
-        .skills {
-          background-color: yellow;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-evenly;
-          width: 90%;
-        }
+      justify-content: space-around;
+      img {
+        max-height: 25vh;
+        max-width: 90%;
       }
-      .project-description {
-        height: 50%;
-        font-size: 3vmin;
+      .description {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        .description {
-          height: 50%;
+        font-size: 2.4vmin;
+        height: 55%;
+        width: 98%;
+        h1 {
+          font-size: 5vmin;
+        }
+        h5 {
+          font-weight: bold;
+          margin-left: 1vmin;
+        }
+        p {
+          text-align: justify;
+        }
+        .skills {
+          border: 1px solid #E2D7D4;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          align-self: center;
+          width: 100%;
+          max-height: 9vh;
+          margin: 0 1.3vmin;
+          p {
+            margin: 1vmin;
+            font-size: 2.5vmin;
+            &:hover {
+              font-weight: bold;
+            }
+          }
         }
       }
     }
   }
   .project-list {
-    background-color:#E2D7D4;
+    background-color:#FFF1EE;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -434,7 +456,7 @@ main {
     height: 10vh;
     overflow: scroll;
     .project {
-      border: 1px solid #353535;
+      border: 2px solid #E2D7D4;
       background-color: #FFFEFE;
       border-radius: 5px;
       margin: 0 1vmin;
@@ -444,7 +466,7 @@ main {
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
-      font-size: 0.7em;
+      font-size: 1.3vmax;
       text-align: center;
       color: #353535;
       padding: 2vmin;
@@ -455,15 +477,16 @@ main {
     }
   }
     }
-#contact {
-  height: 87%;
+.contact {
+  height: 80vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: #FFF1EE;
   h2 {
-    font-size: 23px;
+    font-size: 4vmin;
     letter-spacing: 2px;
   }
   .get-in-touch {
@@ -475,7 +498,7 @@ main {
     justify-content: space-between;
     text-align: center;
     h1 {
-      font-size: 50px;
+      font-size: 11vmin;
       letter-spacing: 4px;
       font-variant: small-caps;
     }
@@ -500,6 +523,14 @@ main {
       width: 350px;
       justify-content: space-evenly;
       align-items: center;
+      .short-inputs {
+        height: 15vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+      }
       input {
         width: 95vw;
         border-radius: 5px;
@@ -516,7 +547,7 @@ main {
       button {
         background-color: #FFFEFE;
         height: 6vh;
-        font-size: 2vmax;
+        font-size: 3vmin;
         width: 20vw;
         border-radius: 5px;
         font-family: 'Lato', sans-serif;
@@ -524,6 +555,19 @@ main {
         border: 3px solid #E2D7D4;
       }
     }
+  }
+}
+.email-sent {
+  height: 50vh;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5vmax;
+  text-align: center;
+  h1 {
+    width: 70%;
+    height: 50%;
   }
 }
 
@@ -535,7 +579,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 4vmin;
   span {
     color: #C9C8C8;
   }
@@ -738,10 +782,129 @@ main {
 }
 
   // mobile version
-@media only screen and (max-width: 375px) {
-  header {
-    animation: none;
-    position: fixed;
-    top: 0;
+@media only screen and (min-width: 768px) {
+  .homepage {
+    .header {
+      height: 13vh;
+    }
+  .currently {
+    width: 45vw;
   }
+}
+
+.about-me {
+  .brand-statement {
+    .brand-header {
+      height: 10vh;
+      .icon {
+        font-size: 3vmin;
+      }
+    }
+    .statement {
+      height: 80vh;
+      font-size: 3vmin;
+    }
+  }
+ .experience-container {
+    .experience {
+      .experience-info {
+        font-size: 1.7vmax;
+        .experience-header {
+          height: 5vh;
+          display: flex;
+          align-items: center;
+          h3 { 
+            font-size: 2vmax; 
+          }
+        }
+      }
+    }
+  }
+}
+ .skills {
+   .skills-container {
+     .skills {
+      h2 {
+        font-size: 3.7vmin;
+      }
+       .confident-skills, .comfortable-skills, .dabbled-skills {
+         .icon {
+           font-size: 5vmax;
+           img, #JSON {
+            width: 7vw;
+          }
+          p {
+            font-size: 2vmin;
+          }
+         }
+
+       }
+     }
+   }
+ }
+
+.projects {
+  .selected-project {
+    .description {
+      h1 {
+        font-size: 3vmin !important;
+      }
+      p {
+        font-size: 2vmin !important;
+      }
+    }
+    .skills {
+      max-height: 11vh !important;
+      p {
+        font-size: 2vmin !important;
+      }
+    }
+  }
+}
+
+.contact {
+  .get-in-touch {
+    width: 50%;
+    h1 {
+      font-size: 7vmin;
+    }
+  }
+  .form {
+    width: 90%;
+    height: 50%;
+    margin: 0;
+    display: flex;
+    form {
+      width: 100%;
+      height: 100%;
+      .short-inputs {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        input {
+          width: 40vw;
+          height: 5vh;
+          font-size: 2.5vmin;
+        }
+      }
+      .message {
+        height: 20vh;
+        font-size: 2.5vmin;
+      }
+    }
+  }
+
+}
+
+.footer {
+  div {
+    font-size: 3vmin;
+  }
+}
+
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1502 ) {
+
 }

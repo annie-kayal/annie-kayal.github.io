@@ -7,7 +7,7 @@ const Projects = () => {
   const projects = [
     {
       id: 0,
-      name: 'FitBook',
+      name: 'FITBOOK',
       task: 'Build a full-stack application with your own custom built Python Django API with your database to served on PostgreSQL. Build your front-end using React. The API must include CRUD functionality and be deployed online. This should be completed in one week.',
       techused: ['Git ', 'Github ', 'HTML ', 'Django ', 'React.js ', 'Heroku ', 'PostgreSQL ', 'Bulma ', 'SCSS ', 'Django REST Framework ', 'JWT ', 'Python ', 'Axios ', 'Moment ', 'Babel ', 'Webpack '],
       description: 'Inspired by our love of going to fitness classes, my parnter and I decided for our final project at GA to create an app for likeminded individuals to view and book fitness classes in their local borough. Our brief was to create a fullstack application using PostgreSQL, Python and Django - all VERY new languages and processes for us both. Our frontend was to built using React and implement using React Hooks. We approached the backend together to ensure our API would populate information correctly. The app was also designed to be mobile first to ensure responsiveness.',
@@ -30,7 +30,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      name: 'Harry Potter: All you need to know',
+      name: 'HARRY POTTER: ALL YOU NEED TO KNOW',
       task: 'In 48 hours consume a public API and built a multi-page React front-end. The app should have several components and include a router.',
       techused: ['React.js', 'Bulma', 'HTML', 'Insomnia', 'CSS', 'Axios', 'JavaScript', 'Git', 'Github', 'Google Fonts'],
       description: ['Tasked to produce a multi-page React front-end in 48 hours using a public API, this was a time sensitive project.',
@@ -43,7 +43,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      name: 'Stop, Think & Go!',
+      name: 'STOP, THINK & GO!',
       task: 'Independently render a grid based game in the browser where there winning and scoring is available in a one week period. The obstacles should be autogenerared and the structure should have seperate HTML/CSS/JavaScript files. At least one player should be able to play.',
       techused: ['HTML', 'CSS', 'JavaScript'],
       description: ['Using the fundamentals of web development, my first project at GA was to create a grid-based game using HTML, CSS and Vanilla JavaScript.', 'The game was based on Frogger, where the aim was to help a family of frogs home and avoid moving obstacles.'],
@@ -65,7 +65,7 @@ const Projects = () => {
   }
   console.log(selectedProject)
 
-  return <section id='projects'>
+  return <section className='projects'>
     <div className="project-container">
       {selectedProject.name === '' ?
         <div className="no-project">
