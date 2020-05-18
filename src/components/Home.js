@@ -32,7 +32,7 @@ const Home = (props) => {
     <section className="homepage">
       <div className="introduction">
         <Typist startDelay={5000} avgTypingDelay={98}>
-          <p>Hey there! I'm Annie. </p>
+          <p>Hello there! I'm Annie. </p>
           <p> I'm a Fullstack Software Developer based in London.</p>
         </Typist>
       </div>
