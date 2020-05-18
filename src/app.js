@@ -10,7 +10,7 @@ import Home from './components/Home'
 
 
 const App = () => {
-  return <BrowserRouter>
+  return <BrowserRouter basename='/annie-kayal.github.io'>
     <Switch>
       <Route path='/' component={Home} />
     </Switch>
