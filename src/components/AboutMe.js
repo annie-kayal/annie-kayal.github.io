@@ -60,32 +60,29 @@ const AboutMe = (props) => {
   const [open, setopen] = useState(true)
 
   function ToggleItem(event) {
-    const div = Array.from(document.querySelectorAll('.experience-info'))
-    console.log(div)
-    console.log(open)
+    const div = Array.from(document.querySelectorAll('.expMoreInfo'))
     setopen(!open)
     if (open === true) {
       {
         div.map((el, i) => {
-          if (event.target.parentNode.parentNode === el) {
-            console.log(el.firstChild.firstChild)
+          if (event.target.parentNode.parentNode.nextSibling === el) {
             event.target.innerHTML = '-'
             el.style.animation = 'grow linear 1s'
             el.style.animationFillMode = 'forwards'
-            el.firstChild.firstChild.style.fontWeight = 'bold'
+            el.previousSibling.firstChild.firstChild.style.fontWeight = 'bold'
           }
         })
       }
     } else if (open === false) {
       {
         div.map((el, i) => {
-          if (event.target.parentNode.parentNode === el) {
+          if (event.target.parentNode.parentNode.nextSibling === el) {
             event.target.innerHTML = '+'
             el.style.animation = 'hide linear 1s'
             el.style.animationFillMode = 'forwards'
-            el.firstChild.firstChild.style.fontWeight = 'normal'
+            el.previousSibling.firstChild.firstChild.style.fontWeight = 'normal'
           } else {
-            el.style.height = 35
+            el.style.height = '0em'
           }
         })
       }
@@ -159,6 +156,8 @@ const AboutMe = (props) => {
               <h3>{exp.name}</h3>
               <button onClick={(event) => ToggleItem(event)} className='toggle'>+</button>
             </div>
+          </div>
+          <div className="expMoreInfo">
             <p>{exp.date}</p>
             <p>{exp.role}</p>
             <p>{exp.description}</p>

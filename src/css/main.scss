@@ -284,6 +284,13 @@ main {
         }
       
     }
+    .expMoreInfo {
+      height: 0em;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
   }
   }
     }
@@ -619,7 +626,7 @@ main {
 
 @keyframes grow {
   0% {
-    height: 2em;
+    height: 0em;
     overflow: hidden;
   }
 
@@ -628,7 +635,7 @@ main {
     overflow: hidden;
   }
   50% {
-    height: 8em;
+    height: 6em;
     overflow: hidden;
   } 
   100% {
@@ -644,7 +651,7 @@ main {
     overflow: hidden;
   }
   25% {
-    height: 8em;
+    height: 6em;
     overflow: hidden;
   }
   50% {
@@ -652,7 +659,7 @@ main {
     overflow: hidden;
   }
   100% {
-    height: 2em;
+    height: 0em;
     overflow: hidden;
   }
 }
