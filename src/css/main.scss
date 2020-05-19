@@ -257,15 +257,15 @@ main {
       }
       .experience-info {
         background-color: #EFE5E2;
-        height: 35px;
+        height: 2.5em;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
         overflow: hidden;
         .experience-header {
           display: flex;
           justify-content: space-between;
+          align-items: center;
         }
         .toggle {
           color: #353535;
@@ -619,20 +619,20 @@ main {
 
 @keyframes grow {
   0% {
-    height: 35px;
+    height: 2em;
     overflow: hidden;
   }
 
   25% {
-    height: 50px;
+    height: 4em;
     overflow: hidden;
   }
   50% {
-    height: 100px;
+    height: 8em;
     overflow: hidden;
   } 
   100% {
-    height: 200px;
+    height: 10em;
     overflow: hidden;
   }
 }
@@ -640,19 +640,19 @@ main {
 
 @keyframes hide {
   0% {
-    height: 200px;
+    height: 10em;
     overflow: hidden;
   }
   25% {
-    height: 100px;
+    height: 8em;
     overflow: hidden;
   }
   50% {
-    height: 50px;
+    height: 4em;
     overflow: hidden;
   }
   100% {
-    height: 35px;
+    height: 2em;
     overflow: hidden;
   }
 }
