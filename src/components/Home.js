@@ -7,8 +7,7 @@ import Skills from './Skills'
 
 
 
-const Home = (props) => {
-
+const Home = () => {
   useEffect(() => {
     if (window.performance) {
       if (performance.navigation.type === 1) {
@@ -16,22 +15,22 @@ const Home = (props) => {
         header.current.style.right = '0'
         header.current.style.top = '0'
         header.current.style.position = 'fixed'
-      } else {
+      } else if (performance.navigation.type === 0) {
         header.current.style.animation = 'slideIn linear 5s'
         header.current.style.animationFillMode = 'forwards'
       }
     }
   })
 
-  console.log(performance.navigation)
 
 
   const header = useRef()
 
   return <main>
+
     <section className="homepage">
       <div className="introduction">
-        <Typist startDelay={5000} avgTypingDelay={98}>
+        <Typist startDelay={5000}>
           <p>Hey there! I'm Annie. </p>
           <p> I'm a Fullstack Software Developer based in London.</p>
         </Typist>
@@ -52,7 +51,7 @@ const Home = (props) => {
       </div>
     </section>
     <div id="about-me"></div>
-    <AboutMe props={props} />
+    <AboutMe />
     <div id='skills'></div>
     <Skills />
     <div id='projects'></div>

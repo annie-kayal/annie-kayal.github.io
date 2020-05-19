@@ -63,7 +63,6 @@ const Projects = () => {
       }
     })
   }
-  console.log(selectedProject)
 
   return <section className='projects'>
     <div className="project-container">

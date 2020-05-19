@@ -2,7 +2,17 @@ import React, { useRef, useEffect, useState, useCallback } from 'react'
 import 'bulma'
 import '../css/main.scss'
 
-const AboutMe = (props) => {
+const AboutMe = () => {
+
+  const [dancerLeft, setDancer] = useState(true)
+  useEffect(() => {
+    setDancer(true)
+  }, [])
+
+  const dancer = setInterval(() => {
+    setDancer(!dancerLeft)
+    clearInterval(dancer)
+  }, 1000)
 
   const previousExp = [
     {
@@ -11,7 +21,7 @@ const AboutMe = (props) => {
       date: 'February 2020 - April 2020',
       role: 'Full-time Student',
       image: 'https://seeklogo.com/images/G/general-assembly-logo-D5C634F07A-seeklogo.com.png',
-      description: 'Tweleve week immersive course gaining practical and industry knowledge on the latest fullstack technologies and frameworks'
+      description: 'Twelve week immersive course gaining practical and industry knowledge on the latest fullstack technologies and frameworks.'
     },
     {
       id: 2,
@@ -19,7 +29,7 @@ const AboutMe = (props) => {
       date: 'November 2018 - January 2020',
       role: 'Team leader',
       image: 'https://d3tsytm1wtjqo2.cloudfront.net/images/w/waitrosegarden_9.png',
-      description: 'Part-time role working to complete daily routine tasks. Focus on assisting customers with their instore queries and furthering customer satsifaction'
+      description: 'Part-time role working to complete daily routine tasks. Focus on assisting customers with their in-store queries and furthering customer satsifaction.'
     },
     {
       id: 3,
@@ -27,7 +37,7 @@ const AboutMe = (props) => {
       date: 'April 2018 - November 2018',
       role: 'Junior Social Media Researcher',
       image: 'https://image4.owler.com/logo/linkfluence_owler_20181001_230701_original.png',
-      description: 'Indivudually assembling montly reports for clients on their current social media presence against competitors.'
+      description: 'Individually assembling montly reports for clients on their current social media presence against competitors.'
     },
     {
       id: 4,
@@ -35,7 +45,7 @@ const AboutMe = (props) => {
       date: 'December 2017 - April 2018',
       role: 'Junior Consultant',
       image: 'https://www.strategic-discourse.co.uk/wp-content/uploads/2017/03/logo-smaller-1.png',
-      description: 'Co-authored an in-depth report to be used in partnership with a client to develop an approriate marketing strategy to rebrand themselves in the market'
+      description: 'Co-authored an in-depth report to be used in partnership with a client to develop an appropriate marketing strategy to rebrand themselves in the market.'
     },
     {
       id: 5,
@@ -43,7 +53,7 @@ const AboutMe = (props) => {
       date: 'May 2017 - May 2017',
       role: 'Level Six Diploma in Professional Marketing ',
       image: 'https://cdn.featuredcustomers.com/Company.logo/Kingston-University-Logo.png',
-      description: 'Completed two hypathetical marketing reports for an exisiting company for adapting to digital disruption and measuring an offline campaign.'
+      description: 'Completed two hypothetical marketing reports for an exisiting company for adapting to digital disruption and measuring an offline campaign.'
     },
     {
       id: 6,
@@ -56,7 +66,6 @@ const AboutMe = (props) => {
 
   ]
 
-  const [dancerLeft, setDancer] = useState(false)
   const [open, setopen] = useState(true)
 
   function ToggleItem(event) {
@@ -89,10 +98,6 @@ const AboutMe = (props) => {
     }
   }
 
-  const dancer = setInterval(() => {
-    setDancer(!dancerLeft)
-    clearInterval(dancer)
-  }, 1000)
 
 
   //  SCREEN MAX SIZE OF 610px - NEED BUFFER OF 100px
