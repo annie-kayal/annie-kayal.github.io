@@ -123,31 +123,33 @@ const AboutMe = () => {
       <div className="interests">
         <h1>Currently</h1>
         <span>*updated on the 1st of every month</span>
-        <div className="interest">
-          <h3>Watching:</h3>
-          <div>
-            <p>Teen Wolf <small>(Netflix)</small></p>
-            <p>Hustlers <small>(Amazon Prime)</small></p>
+        <div className="interests-container">
+          <div className="interest">
+            <h3>Watching:</h3>
+            <div>
+              <p>Teen Wolf <small>(Netflix)</small></p>
+              <p>Hustlers <small>(Amazon Prime)</small></p>
+            </div>
           </div>
-        </div>
-        <div className="interest">
-          <h3>Reading:</h3>
-          <div>
-            <p>Our Stop <small>(by Laura Jane Williams)</small></p>
-            <p>Because Internet <small>(by Grethcen McCulloch)</small></p>
+          <div className="interest">
+            <h3>Reading:</h3>
+            <div>
+              <p>Our Stop <small>(by Laura Jane Williams)</small></p>
+              <p>Because Internet <small>(by Grethcen McCulloch)</small></p>
+            </div>
           </div>
-        </div>
-        <div className="interest listening">
-          <h3>Listening:</h3>
-          <div>
-            <h4>Replayed Music:</h4>
-            <p>99 Ways <small>(by Kadiata)</small></p>
-            <p>Menswear <small>(by 1975)</small></p>
-          </div>
-          <div>
-            <h4>Podcasts:</h4>
-            <p>SyntaxFM</p>
-            <p>Frontend Happy Hour</p>
+          <div className="interest listening">
+            <h3>Listening:</h3>
+            <div>
+              <h4>Replayed Music:</h4>
+              <p>99 Ways <small>(by Kadiata)</small></p>
+              <p>Menswear <small>(by 1975)</small></p>
+            </div>
+            <div>
+              <h4>Podcasts:</h4>
+              <p>SyntaxFM</p>
+              <p>Frontend Happy Hour</p>
+            </div>
           </div>
         </div>
       </div>

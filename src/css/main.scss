@@ -199,10 +199,17 @@ main {
         border-bottom: 2px solid #EFE5E2;
         font-size: 2vmin;
         margin-bottom: 1vmax;
-        span {
-          font-size: 1.4vmax;
-          font-style: italic;
+          span {
+            font-size: 1.4vmax;
+            font-style: italic;
+          }
+        .interests-container {
+          display: flex;
+          flex-direction: column;
+          align-self: flex-start;
+          width: 100%;
         }
+        
         .interest {
           display: flex;
           flex-direction: column;
@@ -257,7 +264,7 @@ main {
       }
       .experience-info {
         background-color: #FFF1EE;
-        height: 2.5em;
+        height: 3.5vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -270,12 +277,12 @@ main {
         .toggle {
           color: #353535;
           background-color: #FFFEFE;
-          border: 2px solid #E2D7D4;
-          border-radius: 50px;
-          font-size: 20px;
+          border: 2px solid #C9C8C8;
+          border-radius: 10vmax;
+          font-size: 2.5vmin;
           font-weight: bold;
-          height: 35px;
-          width: 35px;
+          height: 3vh;
+          width: 6vw;
           text-align: center;
           display: flex;
           align-items: center;
@@ -390,7 +397,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 65vh;
     width: 90vw;
     .no-project {
       height: 40%;
@@ -398,7 +405,7 @@ main {
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      font-size: 6vmin;
+      font-size: 3vmin;
       .icon {
         color: #E2D7D4;
       }
@@ -418,7 +425,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        font-size: 2.4vmin;
+        font-size: 2.7vmin;
         height: 55%;
         width: 98%;
         h1 {
@@ -450,12 +457,12 @@ main {
           }
         }
         .project-links {
-          font-size: 2em;
+          font-size: 4vmin;
           display: flex;
           justify-content: space-evenly;
           .icon {
           a {
-            color: #E2D7D4;
+            color: #C9C8C8;
           }
         }
         }
@@ -529,13 +536,13 @@ main {
     }
   }
   .form {
-    height: 300px;
+    height: 50%;
     // background-color: salmon;
     form {
-      height: 300px;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      width: 350px;
+      width: 100%;
       justify-content: space-evenly;
       align-items: center;
       .short-inputs {
@@ -548,7 +555,6 @@ main {
       }
       input {
         width: 95vw;
-        border-radius: 5px;
         font-size: 15px;
         background-color: #FFFEFE;
         padding: 2px;
@@ -565,9 +571,9 @@ main {
         font-size: 3vmin;
         width: 20vw;
         border-radius: 5px;
-        font-family: 'Lato', sans-serif;
+        font-family: 'Aleo', sans-serif;
         color: #353535;
-        border: 3px solid #E2D7D4;
+        border: 3px solid #C9C8C8;
       }
     }
   }
@@ -831,6 +837,9 @@ main {
           h3 { 
             font-size: 2vmax; 
           }
+          .toggle {
+            width: 4vw;
+          }
         }
       }
     }
@@ -886,9 +895,10 @@ main {
   }
   .form {
     width: 90%;
-    height: 50%;
+    height: 40%;
     margin: 0;
     display: flex;
+    // background-color: green;
     form {
       width: 100%;
       height: 100%;
@@ -920,6 +930,104 @@ main {
 
 }
 
-@media only screen and (min-width: 1024px) and (min-height: 1502 ) {
+@media only screen and (min-width: 1000px) {
+  .currently {
+    width: 33vw !important;
+  }
+  .about-me {
+    .brand-header {
+      img {
+        height: 5vh !important;
+      }
+    }
+  }
+  .interests {
+    border-top: none !important;
+    border-bottom: none !important;
+  }
+  .interests-container {
+    margin-top: 20px;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    .interest {
+      border: 2px solid #FFF1EE;
+      border-radius: 2vmax;
+      width: 30vw !important;
+      font-size: 1.5vmax !important;
+      height: 35vh !important;
+      padding: 10px;
+      align-items: center !important;
+      div {
+        // background-color: lightgray;
+        width: 80% !important;
+      }
+      h3 {
+        font-size: 2vmax !important;
+      }
+    }
+    .listening {
+      // background-color: lightpink;
+      padding: 10 25px;
+      div {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        p {
+          text-align: center;
+        }
+      
+      }
+    }
+  }
+  .skills {
+    .icon {
+      font-size: 4vmax !important;
+    }
+    img { 
+      width: 4vw !important;
+    }
+  }
+#bulma {
+  height: 4.8vh !important;
+  width: 4vw !important;
+}
+}
 
+@media only screen and (min-width: 1500px) {
+.currently {
+  max-width: 22vw !important;
+}
+.experience-header {
+  h3 {
+    font-size: 1.2vmax !important;
+  }
+  .toggle {
+    width: 2vw !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+.expMoreInfo {
+  font-size: 1.1vmax !important;
+}
+
+.skills {
+  .icon {
+    font-size: 3vmax !important;
+  }
+  img {
+    width: 3vw !important;
+  }
+  #bulma {
+    width: 2.4vw !important
+  }
+}
+.selected-project {
+  .project-links {
+    .icon {
+      font-size: 1.5vmax !important;
+    }
+  }
+}
 }
