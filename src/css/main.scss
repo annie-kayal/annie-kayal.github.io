@@ -803,7 +803,7 @@ main {
 }
 
   // mobile version
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 700px) {
   .homepage {
     .header {
       height: 13vh;
@@ -990,6 +990,9 @@ main {
 #bulma {
   height: 4.8vh !important;
   width: 4vw !important;
+}
+.contact {
+  height: 100vh;
 }
 }
 
