@@ -260,7 +260,7 @@ main {
       }
       h3 {
         margin-left: 2vh;
-        font-size: 4.5vmin;
+        font-size: 3vmin;
       }
       .experience-info {
         background-color: #FFF1EE;
@@ -940,6 +940,30 @@ main {
         height: 5vh !important;
       }
     }
+    .experience-container {
+      height: 80vh;
+    }
+    .experience {
+      margin-bottom: 2vh;
+    }
+    .experience-info {
+      background-color: mediumblue;
+      height: 4vh !important;
+      justify-content: center !important;
+
+      .experience-header {
+        height: 5vh !important
+      }
+      h3 {
+        font-size: 3vmin !important;
+      }
+      .toggle {
+        width: 2vw !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+    }
   }
   .interests {
     border-top: none !important;
@@ -954,12 +978,14 @@ main {
       border-radius: 2vmax;
       width: 30vw !important;
       font-size: 1.5vmax !important;
-      height: 35vh !important;
+      min-height: 45vh !important;
+      max-height: 45vh !important;
       padding: 10px;
       align-items: center !important;
+      justify-content: space-between !important;
       div {
-        // background-color: lightgray;
         width: 80% !important;
+        height: 300px !important;
       }
       h3 {
         font-size: 2vmax !important;
@@ -1001,9 +1027,6 @@ main {
   max-width: 22vw !important;
 }
 .experience-header {
-  h3 {
-    font-size: 1.2vmax !important;
-  }
   .toggle {
     width: 2vw !important;
     display: flex !important;
