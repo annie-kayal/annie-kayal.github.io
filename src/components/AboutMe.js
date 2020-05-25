@@ -155,23 +155,25 @@ const AboutMe = () => {
       </div>
     </div>
     <div className="experience-container">
-      <h1>Previous Experience:</h1>
-      {previousExp.map((exp, key) => {
-        return <div key={key} className="experience">
-          <div id={exp.id} className="experience-info">
-            <div className="experience-header">
-              <h3>{exp.name}</h3>
-              <button onClick={(event) => ToggleItem(event)} className='toggle'>+</button>
+      <h1>Previous Experience</h1>
+      <div className="roles">
+        {previousExp.map((exp, key) => {
+          return <div key={key} className="experience">
+            <div id={exp.id} className="experience-info">
+              <div className="experience-header">
+                <h3>{exp.name}</h3>
+                <button onClick={(event) => ToggleItem(event)} className='toggle'>+</button>
+              </div>
             </div>
-          </div>
-          <div className="expMoreInfo">
-            <p>{exp.date}</p>
-            <p>{exp.role}</p>
-            <p>{exp.description}</p>
-          </div>
+            <div className="expMoreInfo">
+              <p>{exp.date}</p>
+              <p>{exp.role}</p>
+              <p>{exp.description}</p>
+            </div>
 
-        </div>
-      })}
+          </div>
+        })}
+      </div>
     </div>
   </section>
 }

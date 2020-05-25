@@ -151,7 +151,8 @@ main {
     align-items: center;
     color: #353535;
     h1 {
-      font-size: 3vmax;
+      font-size: 6vmin;
+      letter-spacing: 1vmin;
     }
     .brand-statement {
       width: 95%;
@@ -168,9 +169,10 @@ main {
         text-align: justify;
       }
       .brand-header {
+        // background-color: lightcoral;
         display: flex;
-        height: 8vh;
-        width: 90vw;
+        height: 2vh;
+        width: 96vw;
         justify-content: space-between;
         align-items: center;
         img {
@@ -182,14 +184,14 @@ main {
         }
       }
       .statement {
-        height: 65vh;
-        font-size: 3.5vmin;
+        height: 100vh;
+        font-size: 3vmin;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
       }
       .interests{
-        height: 100%;
+        // height: 60vh;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -198,7 +200,6 @@ main {
         border-top: 2px solid #EFE5E2;
         border-bottom: 2px solid #EFE5E2;
         font-size: 2vmin;
-        margin-bottom: 1vmax;
           span {
             font-size: 1.4vmax;
             font-style: italic;
@@ -208,6 +209,7 @@ main {
           flex-direction: column;
           align-self: flex-start;
           width: 100%;
+          height: 100%;
         }
         
         .interest {
@@ -216,7 +218,7 @@ main {
           align-items: flex-start;
           justify-content: flex-start;
           width: 98%;
-          height: 25%;
+          height: 100px;
           font-size: 1.8vmax;
           color: #353535;
           margin-bottom: 5px;
@@ -237,8 +239,7 @@ main {
           }
         }
         .listening {
-
-          height: 35%;
+          height: 250px;
           h4 {
             font-weight: bold;
           }
@@ -248,10 +249,15 @@ main {
   .experience-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     width: 90%;
     height: 60vh;
+    .roles {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
     .experience {
       background-color: #FFF1EE;
       width: 100%;
@@ -260,7 +266,7 @@ main {
       }
       h3 {
         margin-left: 2vh;
-        font-size: 3vmin;
+        font-size: 2.4vmax;
       }
       .experience-info {
         background-color: #FFF1EE;
@@ -281,8 +287,8 @@ main {
           border-radius: 10vmax;
           font-size: 2.5vmin;
           font-weight: bold;
-          height: 3vh;
-          width: 6vw;
+          height: 4vmin;
+          width: 4vmin;
           text-align: center;
           display: flex;
           align-items: center;
@@ -341,7 +347,7 @@ main {
         .icon {
           height: 9vh;
           width: 15vw;
-          font-size: 11vmin;
+          font-size: 5vmax;
           color: #353535;
           margin-bottom: 10px;
           display: flex;
@@ -365,17 +371,17 @@ main {
           }
         }
         img {
-         height: 6vh;
-         width: 11vw;
+         max-height: 5vh;
+         max-width: 11vw;
          color:  #353535;
         }
         #JSON {
-          height: 2vh;
-          width: 11vw;
+          height: 1.5vh;
+          max-width: 11vw;
         }
         #bulma {
-          height: 35px;
-          width: 35px;
+          max-height: 3.7vh;
+          max-width: 8vw;
         }
       }
 
@@ -425,7 +431,6 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        font-size: 2.7vmin;
         height: 55%;
         width: 98%;
         h1 {
@@ -437,6 +442,7 @@ main {
         }
         p {
           text-align: justify;
+          font-size: 2.2vmin;
         }
         .skills {
           border: 1px solid #E2D7D4;
@@ -450,14 +456,14 @@ main {
           margin: 0 1.3vmin;
           p {
             margin: 1vmin;
-            font-size: 2.5vmin;
+            font-size: 2vmin;
             &:hover {
               font-weight: bold;
             }
           }
         }
         .project-links {
-          font-size: 4vmin;
+          font-size: 4.5vmin;
           display: flex;
           justify-content: space-evenly;
           .icon {
@@ -488,7 +494,7 @@ main {
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
-      font-size: 1.3vmax;
+      font-size: 1.1vmax;
       text-align: center;
       color: #353535;
       padding: 2vmin;
@@ -513,22 +519,22 @@ main {
   }
   .get-in-touch {
     font-size: 4vmax;
-    width: 350px;
-    height: 200px;
+    width: 96vw;
+    height: 8vh;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     text-align: center;
     h1 {
-      font-size: 11vmin;
-      letter-spacing: 4px;
+      font-size: 8vmin;
+      letter-spacing: 2vmin;
       font-variant: small-caps;
     }
     .logos {
-      height: 100px;
+      width: 25vw;
       display: flex;
-      justify-content: space-evenly;
-      font-size: 3vmax;
+      justify-content: space-around;
+      font-size: 5vmin;
       align-items: center;
       .fa-github, .fa-linkedin {
         color: #353535;
@@ -536,7 +542,7 @@ main {
     }
   }
   .form {
-    height: 50%;
+    height: 60%;
     // background-color: salmon;
     form {
       height: 100%;
@@ -546,7 +552,7 @@ main {
       justify-content: space-evenly;
       align-items: center;
       .short-inputs {
-        height: 15vh;
+        height: 40%;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -558,12 +564,22 @@ main {
         font-size: 15px;
         background-color: #FFFEFE;
         padding: 2px;
+        &:focus {
+          outline: none;
+          border: 2px solid white;
+          box-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.45), 0 0 30px rgba(255,255,255,0.25), 0 0 30px rgba(255,255,255,0.1) !important;
+        }
       }
       .message {
-        height: 95px;
+        height: 60%;
         width: 95vw;
         background-color: #FFFEFE;
         padding: 2px;
+        &:focus {
+          outline: none;
+          border: 2px solid white;
+          box-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.45), 0 0 30px rgba(255,255,255,0.25), 0 0 30px rgba(255,255,255,0.1) !important;
+        }
       }
       button {
         background-color: #FFFEFE;
@@ -573,7 +589,7 @@ main {
         border-radius: 5px;
         font-family: 'Aleo', sans-serif;
         color: #353535;
-        border: 3px solid #C9C8C8;
+        border: 2px solid #C9C8C8;
       }
     }
   }
@@ -587,8 +603,7 @@ main {
   font-size: 3.5vmax;
   text-align: center;
   h1 {
-    width: 70%;
-    height: 50%;
+    font-size: 3vmin;
   }
 }
 
@@ -803,10 +818,19 @@ main {
 }
 
   // mobile version
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 650px) {
   .homepage {
+    // background-color: lightgrey;
+    .introduction {
+      p {
+      font-size: 5vmin;
+      }
+    }
     .header {
       height: 13vh;
+      a { 
+        font-size: 2.6vmin !important;
+      }
     }
   .currently {
     width: 45vw;
@@ -814,6 +838,9 @@ main {
 }
 
 .about-me {
+  h1 {
+    font-size: 4.5vmin;
+  }
   .brand-statement {
     .brand-header {
       height: 10vh;
@@ -823,23 +850,57 @@ main {
     }
     .statement {
       height: 80vh;
-      font-size: 3vmin;
+      font-size: 2.5vmin;
+    }
+  }
+  .interests {
+    span {
+      font-size: 2vmin !important;
+    }
+    .interest {
+      // background-color: tan;
+      h3 {
+        font-size: 2.5vmin !important;
+      }
+      h4 {
+        font-size:  2.2vmin !important;
+      }
+      p {
+        font-size: 2vmin !important;
+      }
     }
   }
  .experience-container {
+   justify-content: space-evenly;
+   height: 100%;
+   h1 {
+     margin-bottom: 5vmin;
+   }
+   .roles {
+    //  background-color: mediumpurple;
+     flex-direction: row;
+     align-content: space-evenly;
+     flex-wrap: wrap;
+     height: 30%;
+   }
     .experience {
+      width: 45%;
+      height: 5%;
+      margin-bottom: 5vmin;
       .experience-info {
         font-size: 1.7vmax;
         .experience-header {
-          height: 5vh;
+          height: 3vh;
           display: flex;
           align-items: center;
           h3 { 
-            font-size: 2vmax; 
+            font-size: 2vmin; 
           }
-          .toggle {
-            width: 4vw;
-          }
+        }
+      }
+      .expMoreInfo {
+        p {
+          font-size: 2vmin;
         }
       }
     }
@@ -855,7 +916,10 @@ main {
          .icon {
            font-size: 5vmax;
            img, #JSON {
-            width: 7vw;
+            width: 5.5vw !important;
+          }
+          #bulma {
+            width: 5vw !important;
           }
           p {
             font-size: 2vmin;
@@ -874,47 +938,75 @@ main {
         font-size: 3vmin !important;
       }
       p {
-        font-size: 2vmin !important;
+        font-size: 1.8vmin !important;
+      }
+      .project-links {
+        .icon {
+          font-size: 3vmin;
+        }
       }
     }
     .skills {
       max-height: 11vh !important;
-      p {
+      h5 {
         font-size: 2vmin !important;
       }
+      p {
+        font-size: 1.7vmin !important;
+      }
+    }
+  }
+  .project-list {
+    h3 {
+      font-size: 1.7vmin;
     }
   }
 }
 
 .contact {
+  height: 100vh;
   .get-in-touch {
-    width: 50%;
+    // background-color: lightgreen;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
     h1 {
       font-size: 7vmin;
     }
+    .logos {
+      justify-content: space-around;
+      width: 25vw;
+      .icon {
+        font-size: 5vmin;
+      }
+    }
+  }
+  h2 {
+    font-size: 4vmin;
   }
   .form {
-    width: 90%;
-    height: 40%;
+    width: 85%;
+    height: 60%;
     margin: 0;
     display: flex;
-    // background-color: green;
     form {
       width: 100%;
       height: 100%;
       .short-inputs {
         width: 100%;
+        height: 40%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: space-around;
         input {
-          width: 40vw;
+          width: 100%;
           height: 5vh;
           font-size: 2.5vmin;
         }
       }
       .message {
-        height: 20vh;
+        height: 40vh;
         font-size: 2.5vmin;
       }
     }
@@ -930,9 +1022,13 @@ main {
 
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 800px) {
+  .homepage {
+    // background-color: maroon;
+  }
   .currently {
-    width: 33vw !important;
+    width: 45vw !important;
+    padding: 2vmin;
   }
   .about-me {
     .brand-header {
@@ -940,8 +1036,12 @@ main {
         height: 5vh !important;
       }
     }
+    .statement {
+      font-size: 2vmin !important;
+    }
     .experience-container {
-      height: 80vh;
+      margin-top: 5vmin;
+      width: 100%;
     }
     .experience {
       margin-bottom: 2vh;
@@ -951,17 +1051,8 @@ main {
       height: 4vh !important;
       justify-content: center !important;
 
-      .experience-header {
-        height: 5vh !important
-      }
       h3 {
-        font-size: 3vmin !important;
-      }
-      .toggle {
-        width: 2vw !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        font-size: 2vmin !important;
       }
     }
   }
@@ -970,22 +1061,23 @@ main {
     border-bottom: none !important;
   }
   .interests-container {
-    margin-top: 20px;
+    // background-color: slategrey;
+    height: 50% !important;
+    margin-top: 1vmin;
     flex-direction: row !important;
     justify-content: space-between !important;
     .interest {
-      border: 2px solid #FFF1EE;
+      border: 0.2vmin solid #FFF1EE;
+      box-shadow: 0 0 30px rgba(255, 241, 238, 0.644), 0 0 30px rgba(255,241,238,0.45), 0 0 30px rgba(255,241,238,0.25), 0 0 30px rgba(255,241,238,0.1);
       border-radius: 2vmax;
       width: 30vw !important;
-      font-size: 1.5vmax !important;
-      min-height: 45vh !important;
-      max-height: 45vh !important;
+      height: 32vh !important;
       padding: 10px;
       align-items: center !important;
       justify-content: space-between !important;
       div {
-        width: 80% !important;
-        height: 300px !important;
+        height: 100% !important;
+        font-size: 1vmin !important;
       }
       h3 {
         font-size: 2vmax !important;
@@ -1007,7 +1099,7 @@ main {
   }
   .skills {
     .icon {
-      font-size: 4vmax !important;
+      font-size: 5vmax !important;
     }
     img { 
       width: 4vw !important;
@@ -1022,38 +1114,73 @@ main {
 }
 }
 
-@media only screen and (min-width: 1500px) {
-.currently {
-  max-width: 22vw !important;
-}
-.experience-header {
-  .toggle {
-    width: 2vw !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+@media only screen and (min-width: 900px) {
+  .homepage {
+    // background-color: gold;
+  }
+  .currently {
+    max-width: 34.5vw !important;
+    font-size: 3vmin !important;
   }
 }
+
+@media only screen and (min-width: 1000px) {
+  .homepage {
+    // background-color: salmon;
+  }
+.currently {
+  min-width: 33vw !important;
+  max-width: 35vw !important;
+  font-size: 3vmin !important;
+}
 .expMoreInfo {
-  font-size: 1.1vmax !important;
+  p {
+    font-size: 2vmin !important;
+  }
 }
 
 .skills {
   .icon {
-    font-size: 3vmax !important;
+    font-size: 5vmin !important;
   }
   img {
-    width: 3vw !important;
+    max-width: 4vw !important;
+    max-height: 5vw !important;
   }
   #bulma {
-    width: 2.4vw !important
+    height: 3.5vh !important;
+    max-width: 2.4vw !important
   }
 }
-.selected-project {
-  .project-links {
-    .icon {
-      font-size: 1.5vmax !important;
+#JSON {
+  height: 1.5vh !important;
+}
+.get-in-touch {
+  justify-content: center !important;
+}
+}
+
+@media only screen and (min-width: 1500px) {
+  .homepage {
+    // background-color: green;
+    .currently {
+      width: 22vw !important;
     }
   }
-}
+  .brand-header {
+    max-width: 60vw !important;
+  }
+  .experience {
+    width: 30% !important;
+  }
+  .skills {
+    img {
+      height: 5vh !important;
+      max-width: 2.2vw !important;
+    }
+    #bulma {
+      height: 3.5vh !important;
+      max-width: 2vw !important;
+    }
+  }
 }
