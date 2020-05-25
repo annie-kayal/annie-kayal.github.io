@@ -14,7 +14,9 @@ const SelectedProject = ({ selectedProject }) => {
 
       <p>{selectedProject.description}</p>
       <div className="project-links">
-        <div className="icon"><a target='blank' href={selectedProject.deployedProject}><i className="fas fa-link"></i></a></div>
+        <div className="icon">
+          <a target='blank' href={selectedProject.deployedProject}><i className="fas fa-link"></i></a>
+        </div>
         <div className="icon"><a target='blank' href={selectedProject.github}><i className="fab fa-github"></i></a></div>
       </div>
     </div>

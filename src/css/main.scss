@@ -457,18 +457,19 @@ main {
           p {
             margin: 1vmin;
             font-size: 2vmin;
-            &:hover {
-              font-weight: bold;
-            }
           }
         }
         .project-links {
           font-size: 4.5vmin;
           display: flex;
+          align-items: center;
           justify-content: space-evenly;
           .icon {
           a {
             color: #C9C8C8;
+            &:hover {
+             color: #353535;
+            }
           }
         }
         }
@@ -538,6 +539,9 @@ main {
       align-items: center;
       .fa-github, .fa-linkedin {
         color: #353535;
+        &:hover {
+          color: #cfcfcf;
+        }
       }
     }
   }
@@ -566,7 +570,7 @@ main {
         padding: 2px;
         &:focus {
           outline: none;
-          border: 2px solid white;
+          border: 2px double white;
           box-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.45), 0 0 30px rgba(255,255,255,0.25), 0 0 30px rgba(255,255,255,0.1) !important;
         }
       }
@@ -577,7 +581,7 @@ main {
         padding: 2px;
         &:focus {
           outline: none;
-          border: 2px solid white;
+          border: 2px double #FFFEFE;
           box-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.45), 0 0 30px rgba(255,255,255,0.25), 0 0 30px rgba(255,255,255,0.1) !important;
         }
       }

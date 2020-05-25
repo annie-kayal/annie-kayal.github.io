@@ -35,7 +35,7 @@ const Contact = () => {
         <div className="icon"><a rel="noopener noreferrer" target='_blank' href='https://www.linkedin.com/in/anniekayal/'><i className="fab fa-linkedin"></i></a></div>
       </div>
     </div>
-    <h2>Or Email Me <i className="fas fa-arrow-down"></i></h2>
+    <div className="email-me"><h2>Or Email Me <i className="fas fa-arrow-down"></i></h2></div>
     {success === '' ?
       <Email
         email={email}
