@@ -185,7 +185,7 @@ main {
       }
       .statement {
         height: 60vh;
-        font-size: 3vmin;
+        font-size: 1.7vmax;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -391,7 +391,7 @@ main {
 }
 
 .projects {
-  height: 90vh;
+  height: 100vh;
   background-color: #FFFEFE;
   color: #353535;
   display: flex;
@@ -403,7 +403,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 65vh;
+    height: 85vh;
     width: 90vw;
     .no-project {
       height: 40%;
@@ -411,9 +411,10 @@ main {
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      font-size: 3vmin;
+      font-size: 2.5vmax;
       .icon {
         color: #E2D7D4;
+        font-size: 3.5vmax;
       }
     }
     .selected-project {
@@ -422,27 +423,29 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-evenly;
       img {
         max-height: 25vh;
         max-width: 90%;
+        margin-top: 1.3vmin;
       }
       .description {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        height: 55%;
+        height: 75%;
         width: 98%;
         h1 {
           font-size: 5vmin;
         }
         h5 {
           font-weight: bold;
-          margin-left: 1vmin;
+          margin-left: 0.5vmin;
+          font-size: 3vmin;
         }
         p {
           text-align: justify;
-          font-size: 2.2vmin;
+          font-size: 2.8vmin;
         }
         .skills {
           border: 1px solid #E2D7D4;
@@ -452,15 +455,15 @@ main {
           flex-wrap: wrap;
           align-self: center;
           width: 100%;
-          max-height: 9vh;
+          max-height: 12.5vh;
           margin: 0 1.3vmin;
           p {
             margin: 1vmin;
-            font-size: 2vmin;
+            font-size: 2.5vmin;
           }
         }
         .project-links {
-          font-size: 4.5vmin;
+          font-size: 5vmin;
           display: flex;
           align-items: center;
           justify-content: space-evenly;
@@ -489,16 +492,16 @@ main {
       background-color: #FFFEFE;
       border-radius: 5px;
       margin: 0 1vmin;
-      height: 8vh;
+      height: 9vh;
       width: 25vw;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
-      font-size: 1.1vmax;
+      font-size: 2.5vmin;
       text-align: center;
       color: #353535;
-      padding: 2vmin;
+      // padding: 0.5vmin;
       img {
         max-height: 9vh;
         max-width: 20vw
@@ -588,8 +591,8 @@ main {
       button {
         background-color: #FFFEFE;
         height: 6vh;
-        font-size: 3vmin;
-        width: 20vw;
+        font-size: 2.2vmax;
+        width: 30vw;
         border-radius: 5px;
         font-family: 'Aleo', sans-serif;
         color: #353535;
@@ -604,10 +607,10 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3.5vmax;
+  font-size: 5vmax;
   text-align: center;
   h1 {
-    font-size: 3vmin;
+    font-size: 5vmin;
   }
 }
 
@@ -620,9 +623,6 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 4vmin;
-  span {
-    color: #C9C8C8;
-  }
 }
 
 
@@ -864,13 +864,13 @@ main {
     .interest {
       // background-color: tan;
       h3 {
-        font-size: 2.5vmin !important;
+        font-size: 3vmin !important;
       }
       h4 {
-        font-size:  2.2vmin !important;
+        font-size:  2.5vmin !important;
       }
       p {
-        font-size: 2vmin !important;
+        font-size: 2.3vmin !important;
       }
     }
   }
@@ -892,19 +892,18 @@ main {
       height: 5%;
       margin-bottom: 5vmin;
       .experience-info {
-        font-size: 1.7vmax;
         .experience-header {
           height: 3vh;
           display: flex;
           align-items: center;
           h3 { 
-            font-size: 2vmin; 
+            font-size: 2.3vmin; 
           }
         }
       }
       .expMoreInfo {
         p {
-          font-size: 2vmin;
+          font-size: 2.3vmin;
         }
       }
     }
@@ -942,27 +941,27 @@ main {
         font-size: 3vmin !important;
       }
       p {
-        font-size: 1.8vmin !important;
+        font-size: 2.5vmin !important;
       }
       .project-links {
         .icon {
-          font-size: 3vmin;
+          font-size: 3.5vmin;
         }
       }
     }
     .skills {
       max-height: 11vh !important;
       h5 {
-        font-size: 2vmin !important;
+        font-size: 2.5vmin !important;
       }
       p {
-        font-size: 1.7vmin !important;
+        font-size: 2vmin !important;
       }
     }
   }
   .project-list {
     h3 {
-      font-size: 1.7vmin;
+      font-size: 2vmin;
     }
   }
 }
@@ -1028,7 +1027,7 @@ main {
 
 @media only screen and (min-width: 800px) {
   .homepage {
-    // background-color: maroon;
+    background-color: maroon;
   }
   .currently {
     width: 45vw !important;
@@ -1113,6 +1112,18 @@ main {
   height: 4.8vh !important;
   width: 4vw !important;
 }
+.projects {
+  .selected-project {
+    .skills {
+      max-height: 35% !important;
+    }
+    .description {
+      p {
+        font-size: 2vmin !important;
+      }
+    }
+  }
+}
 .contact {
   height: 100vh;
 }
@@ -1120,7 +1131,7 @@ main {
 
 @media only screen and (min-width: 900px) {
   .homepage {
-    // background-color: gold;
+    background-color: gold;
   }
   .currently {
     max-width: 34.5vw !important;

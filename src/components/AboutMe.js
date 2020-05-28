@@ -66,35 +66,22 @@ const AboutMe = () => {
 
   ]
 
-  const [open, setopen] = useState(true)
 
   function ToggleItem(event) {
     const div = Array.from(document.querySelectorAll('.expMoreInfo'))
-    setopen(!open)
-    if (open === true) {
-      {
-        div.map((el, i) => {
-          if (event.target.parentNode.parentNode.nextSibling === el) {
-            event.target.innerHTML = '-'
-            el.style.animation = 'grow linear 1s'
-            el.style.animationFillMode = 'forwards'
-            el.previousSibling.firstChild.firstChild.style.fontWeight = 'bold'
-          }
-        })
-      }
-    } else if (open === false) {
-      {
-        div.map((el, i) => {
-          if (event.target.parentNode.parentNode.nextSibling === el) {
-            event.target.innerHTML = '+'
-            el.style.animation = 'hide linear 1s'
-            el.style.animationFillMode = 'forwards'
-            el.previousSibling.firstChild.firstChild.style.fontWeight = 'normal'
-          } else {
-            el.style.height = '0em'
-          }
-        })
-      }
+    if (event.target.innerHTML === '+') {
+      div.map((el, i) => {
+        if (el.previousSibling.firstChild.lastChild.innerHTML === '-') {
+          el.style.animation = 'hide linear 1s'
+          el.style.height = '0em'
+          el.previousSibling.firstChild.lastChild.innerHTML = '+'
+        }
+      }) 
+      event.target.parentNode.parentNode.nextSibling.style.animation = 'grow forwards linear 1s'
+      event.target.innerHTML = '-'
+    } else {
+      event.target.parentNode.parentNode.nextSibling.style.animation = 'hide forwards linear 1s'
+      event.target.innerHTML = '+'
     }
   }
 
@@ -165,7 +152,7 @@ const AboutMe = () => {
                 <button onClick={(event) => ToggleItem(event)} className='toggle'>+</button>
               </div>
             </div>
-            <div className="expMoreInfo">
+            <div id={exp.id} className="expMoreInfo">
               <p>{exp.date}</p>
               <p>{exp.role}</p>
               <p>{exp.description}</p>
