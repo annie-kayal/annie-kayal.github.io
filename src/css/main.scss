@@ -893,7 +893,7 @@ main {
       margin-bottom: 5vmin;
       .experience-info {
         .experience-header {
-          height: 3vh;
+          height: 5vh;
           display: flex;
           align-items: center;
           h3 { 
@@ -1072,7 +1072,7 @@ main {
     .interest {
       border: 0.2vmin solid #FFF1EE;
       box-shadow: 0 0 30px rgba(255, 241, 238, 0.644), 0 0 30px rgba(255,241,238,0.45), 0 0 30px rgba(255,241,238,0.25), 0 0 30px rgba(255,241,238,0.1);
-      border-radius: 2vmax;
+      // border-radius: 2vmax;
       width: 30vw !important;
       height: 32vh !important;
       padding: 10px;
@@ -1126,6 +1126,13 @@ main {
 }
 .contact {
   height: 100vh;
+  .form {
+    form {
+      button {
+        width: 20vw;
+      }
+    }
+  }
 }
 }
 
@@ -1173,6 +1180,17 @@ main {
 .get-in-touch {
   justify-content: center !important;
 }
+.contact {
+  height: 100vh;
+  .form {
+    form {
+      button {
+        width: 15vw;
+        font-size: 2vmin;
+      }
+    }
+  }
+}
 }
 
 @media only screen and (min-width: 1500px) {
@@ -1196,6 +1214,16 @@ main {
     #bulma {
       height: 3.5vh !important;
       max-width: 2vw !important;
+    }
+  }
+  .contact {
+    height: 100vh;
+    .form {
+      form {
+        button {
+          width: 200px;
+        }
+      }
     }
   }
 }

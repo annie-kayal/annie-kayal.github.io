@@ -114,8 +114,8 @@ const AboutMe = () => {
           <div className="interest">
             <h3>Watching:</h3>
             <div>
-              <p>Teen Wolf <small>(Netflix)</small></p>
-              <p>Hustlers <small>(Amazon Prime)</small></p>
+              {/* <p> <small>(Netflix)</small></p> */}
+              <p>Supernatural <small>(Amazon Prime)</small></p>
             </div>
           </div>
           <div className="interest">
@@ -129,8 +129,8 @@ const AboutMe = () => {
             <h3>Listening:</h3>
             <div>
               <h4>Replayed Music:</h4>
-              <p>99 Ways <small>(by Kadiata)</small></p>
-              <p>Menswear <small>(by 1975)</small></p>
+              <p>Be Kind <small>(by Halsey & Marshmallow)</small></p>
+              <p>Like It Is <small>(by Kygo)</small></p>
             </div>
             <div>
               <h4>Podcasts:</h4>
