@@ -12,6 +12,7 @@ body {
 }
 
 
+
 #root {
   width: 100%;
   height: 100%;
@@ -190,61 +191,65 @@ main {
         flex-direction: column;
         justify-content: space-evenly;
       }
-      .interests{
-        // height: 60vh;
-        width: 100%;
+    
+  }
+  .outside-coding {
+    width: 95%;
+    margin-bottom: 10vmin;
+    border-top: 2px solid #EFE5E2;
+    border-bottom: 2px solid #EFE5E2;
+    .interests{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      font-size: 2vmin;
+        span {
+          font-size: 1.4vmax;
+          font-style: italic;
+        }
+      .interests-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        border-top: 2px solid #EFE5E2;
-        border-bottom: 2px solid #EFE5E2;
-        font-size: 2vmin;
-          span {
-            font-size: 1.4vmax;
-            font-style: italic;
-          }
-        .interests-container {
-          display: flex;
-          flex-direction: column;
-          align-self: flex-start;
+        align-self: flex-start;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .interest {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 98%;
+        height: 100px;
+        font-size: 1.8vmax;
+        color: #353535;
+        margin-bottom: 5px;
+        div {
+          // background-color: rosybrown;
           width: 100%;
-          height: 100%;
-        }
-        
-        .interest {
+          height: 70%;
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          justify-content: flex-start;
-          width: 98%;
-          height: 100px;
-          font-size: 1.8vmax;
-          color: #353535;
-          margin-bottom: 5px;
-          div {
-            // background-color: rosybrown;
-            width: 100%;
-            height: 70%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-          }
-          h3 {
-            font-size: 2.2vmax;
-            font-weight: bold;
-          }
-          small {
-            font-style: italic;
-          }
+          justify-content: space-evenly;
         }
-        .listening {
-          height: 250px;
-          h4 {
-            font-weight: bold;
-          }
+        h3 {
+          font-size: 2.2vmax;
+          font-weight: bold;
+        }
+        small {
+          font-style: italic;
         }
       }
+      .listening {
+        height: 250px;
+        h4 {
+          font-weight: bold;
+        }
+      }
+    }
   }
   .experience-container {
     display: flex;
@@ -391,49 +396,36 @@ main {
 }
 
 .projects {
-  height: 100vh;
   background-color: #FFFEFE;
+  height: 80vh;
   color: #353535;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  .project-container {
-    border: 2px solid #E2D7D4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 85vh;
-    width: 90vw;
-    .no-project {
-      height: 40%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      font-size: 2.5vmax;
-      .icon {
-        color: #E2D7D4;
-        font-size: 3.5vmax;
-      }
-    }
     .selected-project {
+      // background-color: fuchsia;
       width: 100%;
-      height: 100%;
+      max-height: 525px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: space-around;
+      p {
+        font-size: 3vmin;
+        width: 98%;
+      }
       img {
         max-height: 25vh;
         max-width: 90%;
         margin-top: 1.3vmin;
       }
       .description {
+        // background-color: indianred;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        height: 75%;
+        height: 450px;
         width: 98%;
         h1 {
           font-size: 5vmin;
@@ -442,10 +434,6 @@ main {
           font-weight: bold;
           margin-left: 0.5vmin;
           font-size: 3vmin;
-        }
-        p {
-          text-align: justify;
-          font-size: 2.8vmin;
         }
         .skills {
           border: 1px solid #E2D7D4;
@@ -459,56 +447,33 @@ main {
           margin: 0 1.3vmin;
           p {
             margin: 1vmin;
-            font-size: 2.5vmin;
+            font-size: 2.8vmin;
+            width: auto;
           }
         }
-        .project-links {
-          font-size: 5vmin;
-          display: flex;
-          align-items: center;
-          justify-content: space-evenly;
-          .icon {
-          a {
-            color: #C9C8C8;
-            &:hover {
-             color: #353535;
-            }
+      }
+      .project-links {
+        // background-color: forestgreen;
+        width: 100%;
+        // min-height: 20%;
+        height: 150px;
+        font-size: 5vmin;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .icon {
+        a {
+          color: #C9C8C8;
+          &:hover {
+           color: #353535;
           }
         }
-        }
+      }
       }
     }
+
   }
-  .project-list {
-    background-color:#FFF1EE;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100vw;
-    height: 10vh;
-    overflow: scroll;
-    .project {
-      border: 2px solid #E2D7D4;
-      background-color: #FFFEFE;
-      border-radius: 5px;
-      margin: 0 1vmin;
-      height: 9vh;
-      width: 25vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      font-size: 2.5vmin;
-      text-align: center;
-      color: #353535;
-      // padding: 0.5vmin;
-      img {
-        max-height: 9vh;
-        max-width: 20vw
-      }
-    }
-  }
-    }
+    
 .contact {
   height: 80vh;
   width: 100vw;
@@ -848,6 +813,9 @@ main {
   .brand-statement {
     .brand-header {
       height: 10vh;
+      h2 {
+        font-size: 4vmin;
+      }
       .icon {
         font-size: 3vmin;
       }
@@ -877,11 +845,12 @@ main {
  .experience-container {
    justify-content: space-evenly;
    height: 100%;
+  //  background-color: violet;
    h1 {
      margin-bottom: 5vmin;
    }
    .roles {
-    //  background-color: mediumpurple;
+    //  background-color: turquoise;
      flex-direction: row;
      align-content: space-evenly;
      flex-wrap: wrap;
@@ -897,7 +866,7 @@ main {
           display: flex;
           align-items: center;
           h3 { 
-            font-size: 2.3vmin; 
+            font-size: 2.2vmin; 
           }
         }
       }
@@ -936,17 +905,17 @@ main {
 
 .projects {
   .selected-project {
+    // background-color: firebrick;
+    max-height: 700px !important;
+    p {
+      font-size: 2.5vmin !important;
+    }
     .description {
       h1 {
         font-size: 3vmin !important;
       }
       p {
         font-size: 2.5vmin !important;
-      }
-      .project-links {
-        .icon {
-          font-size: 3.5vmin;
-        }
       }
     }
     .skills {
@@ -959,9 +928,9 @@ main {
       }
     }
   }
-  .project-list {
-    h3 {
-      font-size: 2vmin;
+  .project-links {
+    .icon {
+      font-size: 3.5vmin;
     }
   }
 }
@@ -1042,9 +1011,55 @@ main {
     .statement {
       font-size: 2vmin !important;
     }
-    .experience-container {
-      margin-top: 5vmin;
-      width: 100%;
+    .outside-coding {
+      // background-color: thistle;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom: none;
+      border-top: none;
+      .interests-container {
+        height: 50% !important;
+        margin-top: 1vmin;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        .interest {
+          // border: 0.2vmin solid #FFF1EE;
+          box-shadow: 0 0 30px rgba(255, 241, 238, 0.644), 0 0 30px rgba(255,241,238,0.45), 0 0 30px rgba(255,241,238,0.25), 0 0 30px rgba(255,241,238,0.1);
+          // border-radius: 2vmax;
+          width: 30vw !important;
+          height: 32vh !important;
+          padding: 10px;
+          align-items: center !important;
+          justify-content: space-between !important;
+          div {
+            height: 100% !important;
+            p {
+              font-size: 2vmin !important;
+            }
+          }
+          h3 {
+            font-size: 2.5vmin !important;
+          }
+        }
+        .listening {
+          // background-color: lightpink;
+          padding: 10 25px;
+          div {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            h4 {
+              font-size: 2vmin !important;
+            }
+            p {
+              text-align: center;
+            }
+          
+          }
+        }
+      }
     }
     .experience {
       margin-bottom: 2vh;
@@ -1056,47 +1071,6 @@ main {
 
       h3 {
         font-size: 2vmin !important;
-      }
-    }
-  }
-  .interests {
-    border-top: none !important;
-    border-bottom: none !important;
-  }
-  .interests-container {
-    // background-color: slategrey;
-    height: 50% !important;
-    margin-top: 1vmin;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    .interest {
-      border: 0.2vmin solid #FFF1EE;
-      box-shadow: 0 0 30px rgba(255, 241, 238, 0.644), 0 0 30px rgba(255,241,238,0.45), 0 0 30px rgba(255,241,238,0.25), 0 0 30px rgba(255,241,238,0.1);
-      // border-radius: 2vmax;
-      width: 30vw !important;
-      height: 32vh !important;
-      padding: 10px;
-      align-items: center !important;
-      justify-content: space-between !important;
-      div {
-        height: 100% !important;
-        font-size: 1vmin !important;
-      }
-      h3 {
-        font-size: 2vmax !important;
-      }
-    }
-    .listening {
-      // background-color: lightpink;
-      padding: 10 25px;
-      div {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        p {
-          text-align: center;
-        }
-      
       }
     }
   }
@@ -1114,13 +1088,13 @@ main {
 }
 .projects {
   .selected-project {
+    // background-color: gainsboro;
+    max-height: 750px !important;
+    p {
+      font-size: 2vmin !important;
+    }
     .skills {
       max-height: 35% !important;
-    }
-    .description {
-      p {
-        font-size: 2vmin !important;
-      }
     }
   }
 }
@@ -1144,11 +1118,37 @@ main {
     max-width: 34.5vw !important;
     font-size: 3vmin !important;
   }
+  .selected-project {
+    max-height: 800px;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
   .homepage {
     // background-color: salmon;
+  }
+  .brand-header {
+    max-width: 70vw !important;
+    h2 {
+      font-size: 3vmin !important;
+    }
+  }
+  .brand-statement {
+    max-width: 70vw !important;
+    p {
+      font-size: 2.1vmin;
+    }
+  }
+  .outside-coding {
+    // background-color: thistle;
+    width: 90vw !important;
+    .interests {
+      .interests-container {
+        .interest {
+          width: 30% !important; 
+        }
+      }
+    }
   }
 .currently {
   min-width: 33vw !important;
@@ -1158,6 +1158,19 @@ main {
 .expMoreInfo {
   p {
     font-size: 2vmin !important;
+  }
+}
+
+.projects {
+  .selected-project {
+    // background-color: goldenrod;
+    .project-links {
+      // background-color: grey;
+      height: 150px;
+      .icon {
+        font-size: 3vmin;
+      }
+    }
   }
 }
 
@@ -1195,13 +1208,19 @@ main {
 
 @media only screen and (min-width: 1500px) {
   .homepage {
-    // background-color: green;
+    background-color: green;
+    .brand-header {
+      h2 {
+        font-size: 4.5vmin !important;
+      }
+    }
     .currently {
       width: 22vw !important;
     }
   }
-  .brand-header {
-    max-width: 60vw !important;
+  .outside-coding {
+    // background-color: thistle;
+    width: 75% !important;
   }
   .experience {
     width: 30% !important;
@@ -1209,7 +1228,7 @@ main {
   .skills {
     img {
       height: 5vh !important;
-      max-width: 2.2vw !important;
+      max-width: 3vw !important;
     }
     #bulma {
       height: 3.5vh !important;

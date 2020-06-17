@@ -76,7 +76,7 @@ const AboutMe = () => {
           el.style.height = '0em'
           el.previousSibling.firstChild.lastChild.innerHTML = '+'
         }
-      }) 
+      })
       event.target.parentNode.parentNode.nextSibling.style.animation = 'grow forwards linear 1s'
       event.target.innerHTML = '-'
     } else {
@@ -107,9 +107,11 @@ const AboutMe = () => {
       I now have full focus on the MERN stack and am familiar using PostgreSQL and Django.</p>
         <p>Have a scroll through to see the projects I completed at GA and get in touch!</p>
       </div>
+    </div>
+    <div className="outside-coding">
       <div className="interests">
         <h1>Currently</h1>
-        <span>*updated on the 1st of every month</span>
+        <span>*updated on the 1st of every month - <strong>June Edition</strong></span>
         <div className="interests-container">
           <div className="interest">
             <h3>Watching:</h3>
@@ -121,8 +123,8 @@ const AboutMe = () => {
           <div className="interest">
             <h3>Reading:</h3>
             <div>
-              <p>Our Stop <small>(by Laura Jane Williams)</small></p>
-              <p>Because Internet <small>(by Grethcen McCulloch)</small></p>
+              <p>The Flat Share <small>(by Beth O'Leary)</small></p>
+              {/* <p>Because Internet <small>(by Grethcen McCulloch)</small></p> */}
             </div>
           </div>
           <div className="interest listening">
