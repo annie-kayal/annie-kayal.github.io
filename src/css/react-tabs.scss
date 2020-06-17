@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   &__tab-list {
     border-bottom: 1px solid #E2D7D4;
@@ -60,4 +61,8 @@
       height: 100%;
     }
   }
+}
+
+@media only screen and (min-width: 1000px) {
+
 }
