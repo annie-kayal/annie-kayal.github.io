@@ -290,10 +290,10 @@ main {
           background-color: #FFFEFE;
           border: 2px solid #C9C8C8;
           border-radius: 10vmax;
-          font-size: 2.5vmin;
+          font-size: 3vmin;
           font-weight: bold;
-          height: 4vmin;
-          width: 4vmin;
+          height: 6vmin;
+          width: 6vmin;
           text-align: center;
           display: flex;
           align-items: center;
@@ -868,6 +868,11 @@ main {
           h3 { 
             font-size: 2.2vmin; 
           }
+          .toggle {
+            height: 4.5vmin;
+            width: 4.5vmin;
+            text-align: center;
+          }
         }
       }
       .expMoreInfo {
@@ -1155,6 +1160,10 @@ main {
   max-width: 35vw !important;
   font-size: 3vmin !important;
 }
+.toggle {
+  height: 4vmin !important;
+  width: 4vmin !important;
+}
 .expMoreInfo {
   p {
     font-size: 2vmin !important;
@@ -1207,7 +1216,6 @@ main {
 
 @media only screen and (min-width: 1500px) {
   .homepage {
-    // background-color: green;
     .brand-header {
       h2 {
         font-size: 4.5vmin !important;
