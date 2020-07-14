@@ -16,6 +16,14 @@ const AboutMe = () => {
 
   const previousExp = [
     {
+      id: 0,
+      name: 'Code First Girls Fellowship Programme',
+      date: 'June 2020 - Present',
+      role: 'Instructor & Mentee',
+      image: 'https://seeklogo.com/images/G/general-assembly-logo-D5C634F07A-seeklogo.com.png',
+      description: 'An eight week programme teaching \'The Intro To Web Development\' course as well working with five other fellows to deliver a research project around women in tech.'
+    },
+    {
       id: 1,
       name: 'General Assembly',
       date: 'February 2020 - April 2020',
@@ -111,7 +119,7 @@ const AboutMe = () => {
     <div className="outside-coding">
       <div className="interests">
         <h1>Currently</h1>
-        <span>*updated on the 1st of every month - <strong>June Edition</strong></span>
+        <span>*updated on the 1st of every month - <strong>July Edition</strong></span>
         <div className="interests-container">
           <div className="interest">
             <h3>Watching:</h3>
@@ -131,8 +139,8 @@ const AboutMe = () => {
             <h3>Listening:</h3>
             <div>
               <h4>Replayed Music:</h4>
-              <p>Be Kind <small>(by Halsey & Marshmallow)</small></p>
-              <p>Like It Is <small>(by Kygo)</small></p>
+              {/* <p>Be Kind <small>(by Halsey & Marshmallow)</small></p> */}
+              <p>1984 <small>(by Mauve)</small></p>
             </div>
             <div>
               <h4>Podcasts:</h4>

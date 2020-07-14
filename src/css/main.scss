@@ -271,11 +271,11 @@ main {
       }
       h3 {
         margin-left: 2vh;
-        font-size: 2.4vmax;
+        font-size: 2.2vmax;
       }
       .experience-info {
         background-color: #FFF1EE;
-        height: 3.5vh;
+        max-height: 10vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -292,8 +292,8 @@ main {
           border-radius: 10vmax;
           font-size: 3vmin;
           font-weight: bold;
-          height: 6vmin;
-          width: 6vmin;
+          height: 8vmin;
+          width: 8vmin;
           text-align: center;
           display: flex;
           align-items: center;
@@ -866,7 +866,8 @@ main {
           display: flex;
           align-items: center;
           h3 { 
-            font-size: 2.2vmin; 
+            font-size: 2.2vmin;
+            width: 25vw;
           }
           .toggle {
             height: 4.5vmin;
@@ -1075,7 +1076,9 @@ main {
       justify-content: center !important;
 
       h3 {
-        font-size: 2vmin !important;
+        font-size: 1.8vmin !important;
+        width: 35vw !important;
+        // background-color: red;
       }
     }
   }
@@ -1231,6 +1234,10 @@ main {
   }
   .experience {
     width: 30% !important;
+    .toggle {
+      height: 3.5vmin !important;
+      width: 5.8vmin !important;
+    }
   }
   .skills {
     img {
