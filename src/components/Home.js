@@ -32,7 +32,7 @@ const Home = () => {
       <div className="introduction">
         <Typist startDelay={5000}>
           <p>Hey there! I'm Annie. </p>
-          <p> I'm a Fullstack Software Developer based in London.</p>
+          <p> I'm a Fullstack Software Engineer based in London.</p>
         </Typist>
       </div>
       <div ref={header} className="header">
@@ -47,7 +47,7 @@ const Home = () => {
         </div>
       </div>
       <div className="currently showAvailable">
-        <p>CURRENTLY LOOKING FOR OPPORTUNITIES </p>
+        <p>INSTRCUTOR AT CODE FIRST GIRLS <span>|</span> LOOKING FOR OPPORTUNITIES</p>
       </div>
     </section>
     <div id="about-me"></div>
