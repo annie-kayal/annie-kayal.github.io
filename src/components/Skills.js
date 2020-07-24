@@ -89,12 +89,21 @@ const Skills = () => {
       name: 'Webpack',
       icon: <i className="devicon-webpack-plain"></i>
     }
+
   ]
 
   const dabbledSkills = [
     {
       name: 'Mocha',
       icon: <i className="devicon-mocha-plain"></i>
+    },
+    {
+      name: 'Redux',
+      icon: <i className="devicon-redux-"></i>
+    },
+    {
+      name: 'TypeScript',
+      icon: <i className="devicon-typescript-plain"></i>
     }
   ]
 
