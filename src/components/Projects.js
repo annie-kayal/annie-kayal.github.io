@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { Tabs, Tab, TabList, TabPanel } from 'react-tabs'
+import { Link } from 'react-router-dom'
 
+import WIP from './WIP'
+import Skills from './Skills'
 
 const Projects = () => {
+
 
   const GAprojects = [
     {
@@ -53,9 +57,22 @@ const Projects = () => {
     }
   ]
 
+  const SideProjects = [
+    {
+      id: 0,
+      name: 'Pokedex',
+      inspiration: 'Striving on my refound love for Pokemon, I chose to challenge myself to build Ash\'s classic pokedex. This will be a full-stack project based on the original Pokemon series and will contain the first 151 pokemon.',
+      techused: ['Express', 'Mongo', 'Mongoose', 'React.js', 'JavaScript', 'SCSS', 'Body-parser', 'Axios', 'Bcrypt', 'Mongoose-Hidden', 'Mongoose-Unique-Validator', 'Webpack', 'Babel', 'JWT'],
+      image: 'https://www.pngkit.com/png/full/927-9277522_29-images-about-tv-pokemon-snorlax.png',
+      github: 'https://github.com/annie-kayal/pokedex',
+      deployedProject: ''
+    }
+  ]
+
 
 
   const [selectedProject, setProject] = useState({ id: null, name: '', image: '', description: [], techused: [], task: '', github: '', deployedProject: '' })
+  const [modalOpen, ToggleModal] = useState(false)
 
   function viewMore(e) {
     GAprojects.map(project => {
@@ -67,16 +84,26 @@ const Projects = () => {
       }
     })
   }
+  function viewProjects(e) {
+    SideProjects.map(project => {
+      const id = e.target.id
+      console.log(e.target.classID)
+      // console.log(project.id)
+      if (project.id === id) {
+        setProject({ id: project.id, name: project.name, image: project.image, description: project.description, techused: project.techused, task: project.task, github: project.github, deployedProject: project.deployedProject })
+      }
+    })
+  }
 
-
-
-
+  function openModal(e) {
+    ToggleModal(true)
+  }
 
   return <section className='projects'>
     <Tabs>
       <TabList>
         <Tab>General Assembly Projects</Tab>
-        {/* <Tab>Side Projects</Tab> */}
+        <Tab>Side Projects</Tab>
       </TabList>
       <TabPanel>
         <Tabs>
@@ -94,7 +121,7 @@ const Projects = () => {
                 <div className="description">
                   <h1>{project.name}</h1>
                   <div className="skills">
-                    <h5>TECH USED:</h5>
+                    <h5>TECH STACK:</h5>
                     {project.techused.map((skill, key) => {
                       return <p key={key}>{skill}</p>
                     })}
@@ -113,7 +140,53 @@ const Projects = () => {
           })}
         </Tabs>
       </TabPanel>
+      <TabPanel>
+        <Tabs>
+          <TabList>
+            {SideProjects.map(project => {
+              return <Tab key={project.id} onClick={(e) => viewProjects(e)}>
+                {project.name}
+              </Tab>
+            })}
+          </TabList>
+          {SideProjects.map(project => {
+            return <TabPanel key={project.id}>
+              <div className="selected-project">
+                <img src={project.image} />
+                <div className="description">
+                  <h1>{project.name}</h1>
+                  <div className="skills">
+                    <h5>TECH STACK:</h5>
+                    {project.techused.map((skill, key) => {
+                      return <p key={key}>{skill}</p>
+                    })}
+                  </div>
+                </div>
+                <p>{project.inspiration}</p>
+                <div className="project-links">
+
+                  {project.deployedProject === '' ?
+                    <div className="icon" onClick={(e) => openModal(e)}>
+                      <i className="fas fa-link"></i>
+                    </div> :
+                    <div className='icon'>
+                      <a target='blank' href={project.deployedProject}><i className="fas fa-link"></i></a>
+                    </div>
+                  }
+                  <div className="icon"><a target='blank' href={project.github}><i className="fab fa-github"></i></a></div>
+                </div>
+              </div>
+
+            </TabPanel>
+          })}
+        </Tabs>
+      </TabPanel>
     </Tabs>
+    {modalOpen === true ? <WIP
+      modalOpen={modalOpen}
+      ToggleModal={ToggleModal}
+    /> :
+      null}
   </section>
 }
 

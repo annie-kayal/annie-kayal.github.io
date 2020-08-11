@@ -60,13 +60,14 @@ main {
   }
   .currently {
     font-family: 'Lato', sans-serif;
-    width: 60vw;
+    width: 95vw;
     display: flex;
+    flex-direction: column;
     align-self: center;
     text-align: center;
     font-style: 900;
-    font-size: 4vmin;
-    letter-spacing: 5px;
+    font-size: 3.5vmin;
+    letter-spacing: 3px;
     border: 10px double #FFFEFE;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(116, 114, 114);
@@ -75,9 +76,9 @@ main {
     opacity: 0;
     margin-top: 1vmax;
     margin-right: 1vmax;
+    padding: 3%;
     span {
       color: #353535;
-      font-weight: bold;
     }
   }
   .showAvailable {
@@ -466,6 +467,10 @@ main {
         align-items: center;
         justify-content: space-evenly;
         .icon {
+          color: #C9C8C8;
+          &:hover {
+           color: #353535;
+          }
         a {
           color: #C9C8C8;
           &:hover {
@@ -477,7 +482,45 @@ main {
     }
 
   }
-    
+  .modal{
+   justify-self: center;
+  .modal-background {
+    background-color: rgba(176, 169, 169, 0.4);
+    justify-self: center;
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    background-color: #EFE5E2;
+    border: 0.5vmin solid #FFFEFE;
+    font-size: 1.6vmax;
+    height: 30%;
+    width: 90%;
+    padding: 1.5%;
+    h2 {
+      letter-spacing: 3px;
+      font-size: 5vmin;
+      font-weight: 900;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgb(116, 114, 114);
+      color: transparent;
+    }
+    .icon {
+      font-size: 3.3vmin;
+    }
+    a {
+      color: #353535;
+      font-weight: 900;
+      &:hover {
+        color: #999898;
+      }
+    }
+  }
+}
+
 .contact {
   height: 80vh;
   width: 100vw;
@@ -583,6 +626,8 @@ main {
   }
 }
 
+
+
 .footer {
   background-color: #FFFEFE;
   width: 100%;
@@ -593,6 +638,7 @@ main {
   justify-content: center;
   font-size: 4vmin;
 }
+
 
 
 @keyframes bounce {
@@ -806,7 +852,7 @@ main {
       }
     }
   .currently {
-    width: 45vw;
+    width: 85%;
   }
 }
 
@@ -856,7 +902,7 @@ main {
    .roles {
     //  background-color: turquoise;
      flex-direction: row;
-     align-content: space-evenly;
+     align-content: flex-start;
      flex-wrap: wrap;
      height: 30%;
    }
@@ -1007,10 +1053,9 @@ main {
 @media only screen and (min-width: 800px) {
   .homepage {
     // background-color: maroon;
-  }
-  .currently {
-    width: 45vw !important;
-    padding: 2vmin;
+    .currently {
+      font-size: 3.3vmin;
+    }
   }
   .about-me {
     .brand-header {
@@ -1110,6 +1155,9 @@ main {
     }
   }
 }
+.modal-content {
+  width: 60% !important;
+}
 .contact {
   height: 100vh;
   .form {
@@ -1125,10 +1173,10 @@ main {
 @media only screen and (min-width: 900px) {
   .homepage {
     // background-color: gold;
-  }
-  .currently {
-    max-width: 34.5vw !important;
-    font-size: 3vmin !important;
+    .currently {
+      font-size: 2.5vmin;
+      width: 65%;
+    }
   }
   .selected-project {
     max-height: 800px;
@@ -1138,6 +1186,9 @@ main {
 @media only screen and (min-width: 1000px) {
   .homepage {
     // background-color: salmon;
+    .currently {
+      width: 65vw;
+    }
   }
   .brand-header {
     max-width: 70vw !important;
@@ -1162,11 +1213,6 @@ main {
       }
     }
   }
-.currently {
-  min-width: 33vw !important;
-  max-width: 35vw !important;
-  font-size: 3vmin !important;
-}
 .toggle {
   height: 4vmin !important;
   width: 4vmin !important;
@@ -1221,15 +1267,33 @@ main {
 }
 }
 
+@media only screen and (min-width: 1200px) {
+  .homepage {
+    // background-color: gray;
+    .currently {
+      // animation: none;
+      // opacity: 1;
+      width: 55%;
+    }
+  }
+  .modal {
+    .modal-content {
+      width: 640px !important;
+      height: 35%;
+    }
+  }
+}
+
 @media only screen and (min-width: 1500px) {
   .homepage {
+    // background-color: fuchsia;
+    .currently {
+      width: 42%;
+    }
     .brand-header {
       h2 {
         font-size: 4.5vmin !important;
       }
-    }
-    .currently {
-      width: 22vw !important;
     }
   }
   .outside-coding {
@@ -1251,6 +1315,15 @@ main {
     #bulma {
       height: 3.5vh !important;
       max-width: 2vw !important;
+    }
+  }
+  .modal {
+    .modal-content {
+      width: 640px !important;
+      height: 35%;
+      p, strong {
+        font-size: 2vmin;
+      }
     }
   }
   .contact {

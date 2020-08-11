@@ -4,10 +4,11 @@ import AboutMe from './AboutMe'
 import Projects from './Projects'
 import Contact from './Contact'
 import Skills from './Skills'
+import WIP from '../app'
 
 
 
-const Home = () => {
+const Home = (props) => {
   useEffect(() => {
     if (window.performance) {
       if (performance.navigation.type === 1) {
@@ -47,7 +48,9 @@ const Home = () => {
         </div>
       </div>
       <div className="currently showAvailable">
-        <p>INSTRCUTOR AT CODE FIRST GIRLS <span>|</span> LOOKING FOR OPPORTUNITIES</p>
+        <p><span>•</span> INSTRCUTOR AT CODE FIRST GIRLS </p>
+        <p><span>•</span> BUILDING A POKEDEX</p>
+        <p><span>•</span> LOOKING FOR OPPORTUNITIES</p>
       </div>
     </section>
     <div id="about-me"></div>
@@ -55,9 +58,10 @@ const Home = () => {
     <div id='skills'></div>
     <Skills />
     <div id='projects'></div>
-    <Projects />
+    <Projects props={props} />
     <div id='contact'></div>
     <Contact />
+    <WIP />
   </main>
 }
 

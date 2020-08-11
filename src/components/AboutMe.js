@@ -119,12 +119,12 @@ const AboutMe = () => {
     <div className="outside-coding">
       <div className="interests">
         <h1>Currently</h1>
-        <span>*updated on the 1st of every month - <strong>July Edition</strong></span>
+        <span>*updated on the 1st of every month - <strong>August Edition</strong></span>
         <div className="interests-container">
           <div className="interest">
             <h3>Watching:</h3>
             <div>
-              {/* <p> <small>(Netflix)</small></p> */}
+              <p>Good Girls<small>(Netflix)</small></p>
               <p>Supernatural <small>(Amazon Prime)</small></p>
             </div>
           </div>
@@ -140,7 +140,7 @@ const AboutMe = () => {
             <div>
               <h4>Replayed Music:</h4>
               {/* <p>Be Kind <small>(by Halsey & Marshmallow)</small></p> */}
-              <p>1984 <small>(by Mauve)</small></p>
+              <p>Smile<small>(by Katy Perry)</small></p>
             </div>
             <div>
               <h4>Podcasts:</h4>
