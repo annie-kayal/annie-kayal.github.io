@@ -1,6 +1,5 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import 'bulma'
-import '../css/main.scss'
 
 const AboutMe = () => {
 
@@ -17,19 +16,35 @@ const AboutMe = () => {
   const previousExp = [
     {
       id: 0,
-      name: 'Code First Girls Fellowship Programme',
-      date: 'June 2020 - Present',
-      role: 'Instructor & Mentee',
-      image: 'https://seeklogo.com/images/G/general-assembly-logo-D5C634F07A-seeklogo.com.png',
-      description: 'An eight week programme teaching \'The Intro To Web Development\' course as well working with five other fellows to deliver a research project around women in tech.'
+      name: 'Code First Girls',
+      roles: [
+        {
+          date: 'June 2020 - September 2020',
+          role: 'Instructor & Mentee',
+          description: 'An eight week programme teaching \'The Intro To Web Development\' course as well working with five other fellows to deliver a research project around women in tech.'
+        },
+        {
+          date: 'September 2020 - Present',
+          role: 'Volunteer Instructor',
+          description: 'A rolling volunteer position teaching \'The Intro To Web Development\' course to girls interested in learning the fundamentals of HTML, CSS and JavaScript.'
+        }]
     },
+
     {
       id: 1,
       name: 'General Assembly',
-      date: 'February 2020 - April 2020',
-      role: 'Full-time Student',
       image: 'https://seeklogo.com/images/G/general-assembly-logo-D5C634F07A-seeklogo.com.png',
-      description: 'Twelve week immersive course gaining practical and industry knowledge on the latest fullstack technologies and frameworks.'
+      roles: [
+        {
+          date: 'February 2020 - April 2020',
+          role: 'Full-time Student',
+          description: 'Twelve week immersive course gaining practical and industry knowledge on the latest fullstack technologies and frameworks.'
+        },
+        {
+          date: 'August 2020',
+          role: 'Instructional Assosicate',
+          description: 'Twelve week immersive course gaining practical and industry knowledge on the latest fullstack technologies and frameworks.'
+        }]
     },
     {
       id: 2,
@@ -74,25 +89,43 @@ const AboutMe = () => {
 
   ]
 
-
   function ToggleItem(event) {
-    const div = Array.from(document.querySelectorAll('.expMoreInfo'))
+    const div = Array.from(document.querySelectorAll('.experience-header'))
     if (event.target.innerHTML === '+') {
-      div.map((el, i) => {
-        if (el.previousSibling.firstChild.lastChild.innerHTML === '-') {
-          el.style.animation = 'hide linear 1s'
-          el.style.height = '0em'
-          el.previousSibling.firstChild.lastChild.innerHTML = '+'
-        }
+      div.map(el => {
+        if (el.lastChild.innerHTML === '-'  || el.parentElement.nextSibling.firstChild.firstChild.lastChild.innerHTML === '-') {  
+          el.parentElement.nextSibling.style.animation = 'hide forwards linear 1s'
+          el.lastChild.innerHTML = '+'
+          el.lastChild.previousSibling.style.fontWeight = 'normal'
+          el.parentElement.nextSibling.firstChild.lastChild.style.animation = 'hideRole forwards linear 0.5s'
+          el.parentElement.nextSibling.lastChild.lastChild.style.animation = 'hideRole forwards linear 0.5s'
+        } 
       })
-      event.target.parentNode.parentNode.nextSibling.style.animation = 'grow forwards linear 1s'
+      event.target.parentNode.parentNode.nextSibling.style.animation = 'grow forwards linear 0.8s'
+      event.target.previousSibling.style.fontWeight = 'bold'
       event.target.innerHTML = '-'
+      
     } else {
-      event.target.parentNode.parentNode.nextSibling.style.animation = 'hide forwards linear 1s'
+      event.target.parentNode.parentNode.nextSibling.style.animation = 'hide forwards linear 0.8s'
       event.target.innerHTML = '+'
+      event.target.previousSibling.style.fontWeight = 'normal'
     }
   }
 
+  const expand = (e) => {
+    if (e.target.innerHTML === '+') {
+      e.target.parentNode.parentNode.parentNode.style.animation = 'expandedGrow forwards linear 0.8s'
+      e.target.innerHTML = '-'
+      event.target.parentNode.nextSibling.style.animation = 'showExpandedInfo forwards linear 0.8s'
+    } else {
+      e.target.parentNode.parentNode.parentNode.style.animation = 'HideExpansion forwards linear 0.5s'
+      event.target.parentNode.nextSibling.style.animation = 'hideRole forwards linear 0.5s'
+      e.target.innerHTML = '+'
+      
+    }
+
+
+  }
 
 
   //  SCREEN MAX SIZE OF 610px - NEED BUFFER OF 100px
@@ -119,19 +152,19 @@ const AboutMe = () => {
     <div className="outside-coding">
       <div className="interests">
         <h1>Currently</h1>
-        <span>*updated on the 1st of every month - <strong>August Edition</strong></span>
+        <span>*updated on the 1st of every month - <strong>September Edition</strong></span>
         <div className="interests-container">
           <div className="interest">
             <h3>Watching:</h3>
             <div>
-              <p>Good Girls<small>(Netflix)</small></p>
-              <p>Supernatural <small>(Amazon Prime)</small></p>
+              <p>Cobra Kai<small>(Netflix)</small></p>
+              {/* <p>Supernatural <small>(Amazon Prime)</small></p> */}
             </div>
           </div>
           <div className="interest">
             <h3>Reading:</h3>
             <div>
-              <p>The Flat Share <small>(by Beth O'Leary)</small></p>
+              <p>Queenie<small>(by Candice Carty-Williams)</small></p>
               {/* <p>Because Internet <small>(by Grethcen McCulloch)</small></p> */}
             </div>
           </div>
@@ -140,7 +173,7 @@ const AboutMe = () => {
             <div>
               <h4>Replayed Music:</h4>
               {/* <p>Be Kind <small>(by Halsey & Marshmallow)</small></p> */}
-              <p>Smile<small>(by Katy Perry)</small></p>
+              <p>On Somebody<small>(by Ava Max)</small></p>
             </div>
             <div>
               <h4>Podcasts:</h4>
@@ -158,15 +191,37 @@ const AboutMe = () => {
           return <div key={key} className="experience">
             <div id={exp.id} className="experience-info">
               <div className="experience-header">
-                <h3>{exp.name}</h3>
+                <h3>{exp.name} </h3>
                 <button onClick={(event) => ToggleItem(event)} className='toggle'>+</button>
               </div>
             </div>
-            <div id={exp.id} className="expMoreInfo">
-              <p>{exp.date}</p>
-              <p>{exp.role}</p>
-              <p>{exp.description}</p>
-            </div>
+
+            {exp.name === 'General Assembly' || exp.name === 'Code First Girls' ?
+              <div className='multiple-role-info'>
+                {exp.roles.map((role, key) => {
+                  return <div key={key} className='roles-header'>
+                    <div className="expanded-header">
+                      <p>{role.role}</p>
+                      <strong>{role.date}</strong>
+                      <button onClick={(e) => expand(e)} className="toggle">+</button>
+                    </div>
+                    <div className="expanded-info">
+                      <p>{role.description}</p>
+                    </div>
+                  </div>
+                })}
+              </div>
+              :
+              <div className="expMoreInfo">
+                <div className='single-expereince-expand'>
+                  <p>{exp.role} </p>
+                  <strong>{exp.date}</strong>
+                  <p>{exp.description}</p>
+                </div>
+              </div>
+
+            }
+
 
           </div>
         })}

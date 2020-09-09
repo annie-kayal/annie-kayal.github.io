@@ -117,24 +117,25 @@ const Projects = () => {
           {GAprojects.map(project => {
             return <TabPanel key={project.id}>
               <div className="selected-project">
+                <h1>{project.name}</h1>
                 <img src={project.image} />
-                <div className="description">
-                  <h1>{project.name}</h1>
-                  <div className="skills">
-                    <h5>TECH STACK:</h5>
-                    {project.techused.map((skill, key) => {
-                      return <p key={key}>{skill}</p>
-                    })}
+                <div className="project-notes">
+                  <div className="description">
+                    <div className="skills">
+                      <h5>TECH STACK:</h5>
+                      {project.techused.map((skill, key) => {
+                        return <p key={key}>{skill}</p>
+                      })}
+                    </div>
+                  </div>
+                  <p>{project.description}</p>
+                  <div className="project-links">
+                    <div className="icon">
+                      <a target='blank' href={project.deployedProject}><i className="fas fa-link"></i></a>
+                    </div>
+                    <div className="icon"><a target='blank' href={project.github}><i className="fab fa-github"></i></a></div>
                   </div>
                 </div>
-                <p>{project.description}</p>
-                <div className="project-links">
-                  <div className="icon">
-                    <a target='blank' href={project.deployedProject}><i className="fas fa-link"></i></a>
-                  </div>
-                  <div className="icon"><a target='blank' href={project.github}><i className="fab fa-github"></i></a></div>
-                </div>
-
               </div>
             </TabPanel>
           })}
@@ -152,28 +153,30 @@ const Projects = () => {
           {SideProjects.map(project => {
             return <TabPanel key={project.id}>
               <div className="selected-project">
+                <h1>{project.name}</h1>
                 <img src={project.image} />
-                <div className="description">
-                  <h1>{project.name}</h1>
-                  <div className="skills">
-                    <h5>TECH STACK:</h5>
-                    {project.techused.map((skill, key) => {
-                      return <p key={key}>{skill}</p>
-                    })}
-                  </div>
-                </div>
-                <p>{project.inspiration}</p>
-                <div className="project-links">
-
-                  {project.deployedProject === '' ?
-                    <div className="icon" onClick={(e) => openModal(e)}>
-                      <i className="fas fa-link"></i>
-                    </div> :
-                    <div className='icon'>
-                      <a target='blank' href={project.deployedProject}><i className="fas fa-link"></i></a>
+                <div className="project-notes">
+                  <div className="description">
+                    <div className="skills">
+                      <h5>TECH STACK:</h5>
+                      {project.techused.map((skill, key) => {
+                        return <p key={key}>{skill}</p>
+                      })}
                     </div>
-                  }
-                  <div className="icon"><a target='blank' href={project.github}><i className="fab fa-github"></i></a></div>
+                  </div>
+                  <p>{project.inspiration}</p>
+                  <div className="project-links">
+
+                    {project.deployedProject === '' ?
+                      <div className="icon" onClick={(e) => openModal(e)}>
+                        <i className="fas fa-link"></i>
+                      </div> :
+                      <div className='icon'>
+                        <a target='blank' href={project.deployedProject}><i className="fas fa-link"></i></a>
+                      </div>
+                    }
+                    <div className="icon"><a target='blank' href={project.github}><i className="fab fa-github"></i></a></div>
+                  </div>
                 </div>
               </div>
 

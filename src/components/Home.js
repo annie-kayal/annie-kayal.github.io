@@ -9,6 +9,7 @@ import WIP from '../app'
 
 
 const Home = (props) => {
+  const header = useRef()
   useEffect(() => {
     if (window.performance) {
       if (performance.navigation.type === 1) {
@@ -17,15 +18,23 @@ const Home = (props) => {
         header.current.style.top = '0'
         header.current.style.position = 'fixed'
       } else if (performance.navigation.type === 0) {
-        header.current.style.animation = 'slideIn linear 5s'
-        header.current.style.animationFillMode = 'forwards'
+        header.current.style.animation = 'slideIn forwards linear 5s'
       }
     }
   })
 
+  const [infoShowing, setInfo] = useState(true)
+  const currently = useRef()
+  const ToggleInfo = (e) => {
+    setInfo(!infoShowing)
+    console.log(infoShowing)
+    if (infoShowing) {
+      currently.current.style.animation = 'showInfo forwards linear 0.8s'
+    } else {
+      currently.current.style.animation = 'hideInfo forwards linear 0.8s'
+    }
 
-
-  const header = useRef()
+  }
 
   return <main>
 
@@ -33,11 +42,21 @@ const Home = (props) => {
       <div className="introduction">
         <Typist startDelay={5000}>
           <p>Hey there! I'm Annie. </p>
-          <p> I'm a Fullstack Software Engineer based in London.</p>
+          <p> I'm a Fullstack Software Engineer based in London. </p>
         </Typist>
+        <div className="learn-more">
+          <span onClick={(e) => ToggleInfo(e)} className="icon">
+            <i className="fas fa-info-circle"></i>
+          </span>
+          <p>
+            Click to learn more
+          </p>
+        </div>
       </div>
       <div ref={header} className="header">
-        <h1>Annie Kayal</h1>
+        <div>
+          <h1>Annie Kayal</h1>
+        </div>
         <div className="navbar">
           <ul>
             <li><a href='#about-me'>about.</a></li>
@@ -47,7 +66,7 @@ const Home = (props) => {
           </ul>
         </div>
       </div>
-      <div className="currently showAvailable">
+      <div ref={currently} className="currently">
         <p><span>•</span> INSTRCUTOR AT CODE FIRST GIRLS </p>
         <p><span>•</span> BUILDING A POKEDEX</p>
         <p><span>•</span> LOOKING FOR OPPORTUNITIES</p>
