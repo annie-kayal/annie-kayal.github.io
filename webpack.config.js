@@ -7,8 +7,9 @@ module.exports = {
   entry: './src/app.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve('dist'),
-    publicPath: '/'
+    path: path.join(__dirname, 'dist'),
+    publicPath: 'http://localhost:8001/',
+    globalObject: 'this'
   },
   module: {
     rules: [

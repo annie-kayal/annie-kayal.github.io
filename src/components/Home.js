@@ -4,7 +4,7 @@ import AboutMe from './AboutMe'
 import Projects from './Projects'
 import Contact from './Contact'
 import Skills from './Skills'
-import WIP from '../app'
+import WIP from './WIP'
 
 
 

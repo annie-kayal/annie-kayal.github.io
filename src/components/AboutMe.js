@@ -19,32 +19,33 @@ const AboutMe = () => {
       name: 'Code First Girls',
       roles: [
         {
-          date: 'June 2020 - September 2020',
-          role: 'Instructor & Mentee',
-          description: 'An eight week programme teaching \'The Intro To Web Development\' course as well working with five other fellows to deliver a research project around women in tech.'
-        },
-        {
           date: 'September 2020 - Present',
           role: 'Volunteer Instructor',
           description: 'A rolling volunteer position teaching \'The Intro To Web Development\' course to girls interested in learning the fundamentals of HTML, CSS and JavaScript.'
-        }]
+        },
+        {
+          date: 'June 2020 - September 2020',
+          role: 'Instructor & Mentee',
+          description: 'An eight week programme teaching \'The Intro To Web Development\' course as well working with five other fellows to deliver a research project around women in tech.'
+        }
+      ]
     },
-
     {
       id: 1,
       name: 'General Assembly',
       image: 'https://seeklogo.com/images/G/general-assembly-logo-D5C634F07A-seeklogo.com.png',
       roles: [
         {
+          date: 'August 2020 - Present',
+          role: 'Instructional Assosicate',
+          description: 'A remote contract role working with a lead GA instructor to deliver a General Assembly Enterpirse course with Barclays. Sessions include delivering Programmers for Non-Programmers (one week) and JavaScript Fundamental(two week) sessions.'
+        },
+        {
           date: 'February 2020 - April 2020',
           role: 'Full-time Student',
           description: 'Twelve week immersive course gaining practical and industry knowledge on the latest fullstack technologies and frameworks.'
-        },
-        {
-          date: 'August 2020',
-          role: 'Instructional Assosicate',
-          description: 'Twelve week immersive course gaining practical and industry knowledge on the latest fullstack technologies and frameworks.'
-        }]
+        }
+      ]
     },
     {
       id: 2,
@@ -86,25 +87,24 @@ const AboutMe = () => {
       image: 'https://www.cim.co.uk/media/1317/icon-102.png?height=200',
       description: 'A one year degree which focused on teaching traditional marketing models.'
     }
-
   ]
 
   function ToggleItem(event) {
     const div = Array.from(document.querySelectorAll('.experience-header'))
     if (event.target.innerHTML === '+') {
       div.map(el => {
-        if (el.lastChild.innerHTML === '-'  || el.parentElement.nextSibling.firstChild.firstChild.lastChild.innerHTML === '-') {  
+        if (el.lastChild.innerHTML === '-' || el.parentElement.nextSibling.firstChild.firstChild.lastChild.innerHTML === '-') {
           el.parentElement.nextSibling.style.animation = 'hide forwards linear 1s'
           el.lastChild.innerHTML = '+'
           el.lastChild.previousSibling.style.fontWeight = 'normal'
           el.parentElement.nextSibling.firstChild.lastChild.style.animation = 'hideRole forwards linear 0.5s'
           el.parentElement.nextSibling.lastChild.lastChild.style.animation = 'hideRole forwards linear 0.5s'
-        } 
+        }
       })
       event.target.parentNode.parentNode.nextSibling.style.animation = 'grow forwards linear 0.8s'
       event.target.previousSibling.style.fontWeight = 'bold'
       event.target.innerHTML = '-'
-      
+
     } else {
       event.target.parentNode.parentNode.nextSibling.style.animation = 'hide forwards linear 0.8s'
       event.target.innerHTML = '+'
@@ -121,7 +121,7 @@ const AboutMe = () => {
       e.target.parentNode.parentNode.parentNode.style.animation = 'HideExpansion forwards linear 0.5s'
       event.target.parentNode.nextSibling.style.animation = 'hideRole forwards linear 0.5s'
       e.target.innerHTML = '+'
-      
+
     }
 
 

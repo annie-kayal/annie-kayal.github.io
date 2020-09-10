@@ -34,7 +34,6 @@ const Email = ({ handleChange, handleSubmit, email }) => {
         onChange={handleChange}>
       </textarea>
       <button>Send Email</button>
-
     </form>
   </div>
 }

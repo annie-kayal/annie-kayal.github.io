@@ -695,7 +695,7 @@ main {
       button {
         background-color: #FFFEFE;
         height: 6vh;
-        font-size: 2.2vmax;
+        font-size: 1em;
         width: 30vw;
         border-radius: 5px;
         font-family: 'Aleo', sans-serif;
@@ -1121,6 +1121,9 @@ main {
         height: 40vh;
         font-size: 2.5vmin;
       }
+      button {
+        width: 20%;
+      }
     }
   }
 
@@ -1226,7 +1229,7 @@ main {
   .form {
     form {
       button {
-        width: 20vw;
+        font-size: 1.2em;
       }
     }
   }
@@ -1281,11 +1284,19 @@ main {
       }
     }
   }
+  form {
+    button {
+      font-size: 1.7em;
+    }
+  }
 }
 
 @media only screen and (min-width: 1500px) {
   .homepage {
     // background-color: fuchsia;
+    .learn-more {
+      width: 20% !important;
+    }
     .brand-header {
       h2 {
         font-size: 4.5vmin !important;
