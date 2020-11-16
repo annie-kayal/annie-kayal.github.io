@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Tabs, Tab, TabList, TabPanel } from 'react-tabs'
-import { Link } from 'react-router-dom'
 
 import WIP from './WIP'
 import Skills from './Skills'
@@ -15,7 +14,7 @@ const Projects = () => {
       task: 'Build a full-stack application with your own custom built Python Django API with your database to served on PostgreSQL. Build your front-end using React. The API must include CRUD functionality and be deployed online. This should be completed in one week.',
       techused: ['Git ', 'Github ', 'HTML ', 'Django ', 'React.js ', 'Heroku ', 'PostgreSQL ', 'Bulma ', 'SCSS ', 'Django REST Framework ', 'JWT ', 'Python ', 'Axios ', 'Moment ', 'Babel ', 'Webpack '],
       description: 'Inspired by our love of going to fitness classes, my partner and I decided for our final project at GA to create an app for like-minded individuals to view and book fitness classes in their local borough. Our brief was to create a fullstack application using PostgreSQL, Python and Django - all VERY new languages and processes for us both. Our frontend was to built using React and implement using React Hooks. We approached the backend together to ensure our API would populate information correctly. The app was also designed to be mobile first to ensure responsiveness.',
-      image: 'https://i.imgur.com/ZR6Pi6S.png',
+      image: ['https://i.imgur.com/ZR6Pi6S.png', 'https://i.imgur.com/9vDVqeK.png'],
       github: 'https://github.com/annie-kayal/project-4',
       deployedProject: 'https://fitbook-project.herokuapp.com/#/'
     },
@@ -73,6 +72,9 @@ const Projects = () => {
 
   const [selectedProject, setProject] = useState({ id: null, name: '', image: '', description: [], techused: [], task: '', github: '', deployedProject: '' })
   const [modalOpen, ToggleModal] = useState(false)
+  const [setImage, ToggleImage] = useState(false)
+  const mobileImage = useRef()
+  const desktopImage = useRef()
 
   function viewMore(e) {
     GAprojects.map(project => {
@@ -87,8 +89,6 @@ const Projects = () => {
   function viewProjects(e) {
     SideProjects.map(project => {
       const id = e.target.id
-      console.log(e.target.classID)
-      // console.log(project.id)
       if (project.id === id) {
         setProject({ id: project.id, name: project.name, image: project.image, description: project.description, techused: project.techused, task: project.task, github: project.github, deployedProject: project.deployedProject })
       }
@@ -97,6 +97,20 @@ const Projects = () => {
 
   function openModal(e) {
     ToggleModal(true)
+  }
+
+  function handleImageChange(e) {
+    e.preventDefault()
+    ToggleImage(!setImage)
+    if (setImage) {
+      e.target.innerHTML = 'View desktop version'
+      mobileImage.current.style.display = 'block'
+      desktopImage.current.style.display = 'none'
+    } else {
+      e.target.innerHTML = 'View mobile version'
+      mobileImage.current.style.display = 'none'
+      desktopImage.current.style.display = 'block'
+    }
   }
 
   return <section className='projects'>
@@ -117,8 +131,21 @@ const Projects = () => {
           {GAprojects.map(project => {
             return <TabPanel key={project.id}>
               <div className="selected-project">
-                <h1>{project.name}</h1>
-                <img src={project.image} />
+                <div className="titleContainer">
+                  <h1>{project.name}</h1>
+                  {project.name === 'Fitbook' ?
+                    <button onClick={(e) => handleImageChange(e)}>View desktop version</button>
+                    :
+                    null}
+                </div>
+                {project.name === 'Fitbook' ?
+                  <div className='imageContainer'>
+                    <img ref={mobileImage} src={project.image[0]} />
+                    <img ref={desktopImage} id='desktopImage' src={project.image[1]} />
+                  </div>
+                  :
+                  <img className='singleImage' src={project.image} />
+                }
                 <div className="project-notes">
                   <div className="description">
                     <div className="skills">
@@ -154,7 +181,7 @@ const Projects = () => {
             return <TabPanel key={project.id}>
               <div className="selected-project">
                 <h1>{project.name}</h1>
-                <img src={project.image} />
+                <img className='singleImage' src={project.image} />
                 <div className="project-notes">
                   <div className="description">
                     <div className="skills">

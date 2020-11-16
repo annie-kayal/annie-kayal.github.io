@@ -3,19 +3,19 @@ import 'bulma'
 
 const AboutMe = () => {
 
+  const experienceHeader = useRef()
   const [dancerLeft, setDancer] = useState(true)
-  useEffect(() => {
-    setDancer(true)
-  }, [])
-
-  const dancer = setInterval(() => {
-    setDancer(!dancerLeft)
-    clearInterval(dancer)
-  }, 1000)
-
   const previousExp = [
     {
       id: 0,
+      name: 'Feast-It',
+      date: 'November 2020 - Present',
+      role: 'Frontend React Developer',
+      image: 'https://d3tsytm1wtjqo2.cloudfront.net/images/w/waitrosegarden_9.png',
+      description: ''
+    },
+    {
+      id: 1,
       name: 'Code First Girls',
       roles: [
         {
@@ -31,12 +31,12 @@ const AboutMe = () => {
       ]
     },
     {
-      id: 1,
+      id: 2,
       name: 'General Assembly',
       image: 'https://seeklogo.com/images/G/general-assembly-logo-D5C634F07A-seeklogo.com.png',
       roles: [
         {
-          date: 'August 2020 - Present',
+          date: 'August 2020 - November 2020',
           role: 'Instructional Assosicate',
           description: 'A remote contract role working with a lead GA instructor to deliver a General Assembly Enterpirse course with Barclays. Sessions include delivering Programmers for Non-Programmers (one week) and JavaScript Fundamental(two week) sessions.'
         },
@@ -48,7 +48,7 @@ const AboutMe = () => {
       ]
     },
     {
-      id: 2,
+      id: 3,
       name: 'Waitrose & Partners',
       date: 'November 2018 - January 2020',
       role: 'Team leader',
@@ -56,7 +56,7 @@ const AboutMe = () => {
       description: 'Part-time role working to complete daily routine tasks. Focus on assisting customers with their in-store queries and furthering customer satsifaction.'
     },
     {
-      id: 3,
+      id: 4,
       name: 'Linkfluence',
       date: 'April 2018 - November 2018',
       role: 'Junior Social Media Researcher',
@@ -64,7 +64,7 @@ const AboutMe = () => {
       description: 'Individually assembling montly reports for clients on their current social media presence against competitors.'
     },
     {
-      id: 4,
+      id: 5,
       name: 'Strategic Discourse',
       date: 'December 2017 - April 2018',
       role: 'Junior Consultant',
@@ -72,7 +72,7 @@ const AboutMe = () => {
       description: 'Co-authored an in-depth report to be used in partnership with a client to develop an appropriate marketing strategy to rebrand themselves in the market.'
     },
     {
-      id: 5,
+      id: 6,
       name: 'CIM',
       date: 'May 2017 - May 2017',
       role: 'Level Six Diploma in Professional Marketing ',
@@ -80,7 +80,7 @@ const AboutMe = () => {
       description: 'Completed two hypothetical marketing reports for an exisiting company for adapting to digital disruption and measuring an offline campaign.'
     },
     {
-      id: 6,
+      id: 7,
       name: 'Kingston University, London',
       date: 'September 2016 - January 2018',
       role: 'MSc Marketing & Strategy ',
@@ -89,6 +89,16 @@ const AboutMe = () => {
     }
   ]
 
+  useEffect(() => {
+    setDancer(true)
+
+  }, [])
+
+  const dancer = setInterval(() => {
+    setDancer(!dancerLeft)
+    clearInterval(dancer)
+  }, 1000)
+
   function ToggleItem(event) {
     const div = Array.from(document.querySelectorAll('.experience-header'))
     if (event.target.innerHTML === '+') {
@@ -96,24 +106,38 @@ const AboutMe = () => {
         if (el.lastChild.innerHTML === '-' || el.parentElement.nextSibling.firstChild.firstChild.lastChild.innerHTML === '-') {
           el.parentElement.nextSibling.style.animation = 'hide forwards linear 1s'
           el.lastChild.innerHTML = '+'
-          el.lastChild.previousSibling.style.fontWeight = 'normal'
           el.parentElement.nextSibling.firstChild.lastChild.style.animation = 'hideRole forwards linear 0.5s'
           el.parentElement.nextSibling.lastChild.lastChild.style.animation = 'hideRole forwards linear 0.5s'
+          
+          el.lastChild.previousSibling.previousSibling.style.fontWeight = 'normal'
         }
       })
-      event.target.parentNode.parentNode.nextSibling.style.animation = 'grow forwards linear 0.8s'
-      event.target.previousSibling.style.fontWeight = 'bold'
+      event.target.parentNode.parentNode.parentNode.nextSibling.style.animation = 'grow forwards linear 0.8s'
       event.target.innerHTML = '-'
+      if (event.target.previousSibling ) {
+        // console.log(event.target.previousSibling)
+        event.target.previousSibling.parentNode.previousSibling.style.fontWeight = 'bold'
+      }  else {
+        event.target.parentNode.previousSibling.style.fontWeight = 'bold'
+      }
+
+
 
     } else {
-      event.target.parentNode.parentNode.nextSibling.style.animation = 'hide forwards linear 0.8s'
+      event.target.parentNode.parentNode.parentNode.nextSibling.style.animation = 'hide forwards linear 0.8s'
       event.target.innerHTML = '+'
-      event.target.previousSibling.style.fontWeight = 'normal'
+      if (event.target.parentNode.previousSibling.style.fontWeight === 'bold') {
+        event.target.parentNode.previousSibling.style.fontWeight = 'normal'
+      } else {
+        event.target.previousSibling.parentNode.previousSibling.style.fontWeight = 'normal'
+      }
+
     }
   }
 
   const expand = (e) => {
     if (e.target.innerHTML === '+') {
+      console.log(e.target.parentNode.nextSibling)
       e.target.parentNode.parentNode.parentNode.style.animation = 'expandedGrow forwards linear 0.8s'
       e.target.innerHTML = '-'
       event.target.parentNode.nextSibling.style.animation = 'showExpandedInfo forwards linear 0.8s'
@@ -123,13 +147,10 @@ const AboutMe = () => {
       e.target.innerHTML = '+'
 
     }
-
-
   }
 
 
   //  SCREEN MAX SIZE OF 610px - NEED BUFFER OF 100px
-
   return <section className='about-me'>
     <div className="brand-statement">
       <div className="brand-header">
@@ -152,13 +173,13 @@ const AboutMe = () => {
     <div className="outside-coding">
       <div className="interests">
         <h1>Currently</h1>
-        <span>*updated on the 1st of every month - <strong>September Edition</strong></span>
+        <span>*updated on the 1st of every month - <strong>November Edition</strong></span>
         <div className="interests-container">
           <div className="interest">
             <h3>Watching:</h3>
             <div>
-              <p>Cobra Kai<small>(Netflix)</small></p>
-              {/* <p>Supernatural <small>(Amazon Prime)</small></p> */}
+              <p>How To Get Away With Murder<small>(Netflix)</small></p>
+              <p>The Entire Star Wars Collection<small>(Disney +)</small></p>
             </div>
           </div>
           <div className="interest">
@@ -173,7 +194,7 @@ const AboutMe = () => {
             <div>
               <h4>Replayed Music:</h4>
               {/* <p>Be Kind <small>(by Halsey & Marshmallow)</small></p> */}
-              <p>On Somebody<small>(by Ava Max)</small></p>
+              <p>my ex's best friend<small>(by Machine Gun Kelly & BlackBear)</small></p>
             </div>
             <div>
               <h4>Podcasts:</h4>
@@ -190,9 +211,15 @@ const AboutMe = () => {
         {previousExp.map((exp, key) => {
           return <div key={key} className="experience">
             <div id={exp.id} className="experience-info">
-              <div className="experience-header">
-                <h3>{exp.name} </h3>
-                <button onClick={(event) => ToggleItem(event)} className='toggle'>+</button>
+              <div ref={experienceHeader} className="experience-header">
+
+                <h3>{exp.name}</h3>
+
+                <div className="endHeaderContainer">
+                  {exp.date && exp.date.endsWith('Present') ? <p className='current'>current</p> :
+                    exp.roles && exp.roles.filter(roles => roles.date.endsWith('Present')).map(key => <p className='current' key={key}>current</p>)}
+                  <button onClick={(event) => ToggleItem(event)} className='toggle'>+</button>
+                </div>
               </div>
             </div>
 

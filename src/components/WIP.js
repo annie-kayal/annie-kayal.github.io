@@ -4,10 +4,8 @@ const WIP = ({ ToggleModal, modalOpen }) => {
 
   function close(e) {
     ToggleModal(false)
-    console.log('hello')
   }
 
-  console.log(modalOpen)
 
   return <section>
     {modalOpen === true ?

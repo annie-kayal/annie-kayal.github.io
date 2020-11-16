@@ -19,6 +19,7 @@ body {
   height: 100%;
   min-width: 100%;
   margin: 0;
+  overflow: hidden;
 }
 
 
@@ -57,61 +58,50 @@ main {
     justify-content: center;
   }
   .introduction {
-    width: 90%;
+    width: 92%;
     display: flex;
     flex-direction: column;
     align-self: center;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;
     align-items: center;
     p {
-      font-size: 4vmax;
+      font-size: 2.2rem;
       color: #353535;
       font-variant: small-caps;
     }
-    .learn-more {
-      // background-color: green;
-      width: 60%;
-      display: flex;
-      align-self: center;
-      align-items: center;
-      font-size: 1.4em;
-      justify-content: space-evenly;
-      margin-top: 0.5em;
-      opacity: 0;
-      animation: fade ease-in forwards 2s;
-      animation-delay: 10s;
-      .icon {
-        animation: bounce ease-in-out 1s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-    p {
-      font-size: 0.8em;
-    }
-  }
-  }
-  .currently {
+  .innerBorder {
     width: 0%;
-    height: 0%;
+    height: 9.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
+    justify-content: space-between;
     align-self: center;
-    font-style: 900;
-    font-size: 0.7em;
-    letter-spacing: 3px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.15rem;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(116, 114, 114);
     color: transparent;
-    text-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.45), 0 0 30px rgba(255,255,255,0.25), 0 0 30px rgba(255,255,255,0.1);
-    opacity: 0;
-    margin-top: 1em;
-    overflow: hidden;
-    span {
-      color: #353535;
+    margin-top: 1.5rem;
+    box-shadow: inset 0rem 0rem 0.8rem #C9C8C8;
+    animation: bounce linear 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 11s;
+    .bulletPoints {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-self: flex-start;
     }
+    span, p {
+      color: #353535;
+      font-size: 1.1rem;
+      opacity: 0;
+      animation: fade 1s linear forwards;
+      animation-delay: 12.5s;
+    }
+  }
   }
   
 }
@@ -121,30 +111,31 @@ main {
   animation: slideIn linear 5s;
   animation-fill-mode: forwards;
   background-color: #FFF1EE;
-  position: fixed;
   width: 100vw;
-  height: 12%;
-  font-size: 5.5vmin;
+  position: fixed;
   font-variant: small-caps;
-  letter-spacing: 2vmin;
+  letter-spacing: 0.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #353535;
   z-index: 100;
   div {
     @include HWD(50%,100%,flex,row,center,center);
+    h1 {
+      font-size: 2rem;
+    }
   }
     .navbar {
-      height: 50%;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: #FFFEFE;
-      letter-spacing: 1vmin;
+      letter-spacing: 0.1rem;
+      border-bottom: 0.15rem solid #E2D7D4;
+      
         ul {
           width: 95%;
           display: flex;
@@ -154,20 +145,17 @@ main {
           li {
             // background-color: rosybrown;
             list-style: none;
-            font-size: 0.7em;
+            font-size: 1em;
             text-align: center;
+            padding: 0.1rem;
+            &:hover, &:focus {
+              font-weight: 900;
+              border-bottom: 0.2rem solid #E2D7D4;
+            }
             a {
-              height: 20px;
-              // background-color: red;
               font-family: 'Lato', sans-serif;
               text-decoration: none;
               color: #353535;
-              padding: 0.1em;
-              &:hover {
-                font-weight: 900;
-                border-bottom: 3px solid #E2D7D4;
-                border-top: 3px solid #E2D7D4;
-              }
             }
         }
         }
@@ -195,7 +183,6 @@ main {
       width: 95%;
       display: flex;
       flex-direction: column;
-      height: 75%;
       justify-content: center;
       align-items: center;
       h2 {
@@ -232,18 +219,19 @@ main {
   }
   .outside-coding {
     width: 95%;
-    margin-bottom: 10vmin;
     border-top: 2px solid #EFE5E2;
     border-bottom: 2px solid #EFE5E2;
+    margin-bottom: 1rem;
+    padding: 1rem 0.5rem;
     .interests{
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
-      font-size: 2vmin;
+      font-size: 1rem;
         span {
-          font-size: 1.4vmax;
+          font-size: 0.85rem;
           font-style: italic;
           margin-bottom: 1em;
         }
@@ -253,40 +241,41 @@ main {
         align-self: flex-start;
         width: 100%;
         height: 100%;
-      }
-      
-      .interest {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        width: 98%;
-        height: 100px;
-        font-size: 1.8vmax;
-        color: #353535;
-        margin-bottom: 5px;
-        div {
-          // background-color: rosybrown;
-          width: 100%;
-          height: 70%;
+        .interest {
           display: flex;
           flex-direction: column;
-          justify-content: space-evenly;
+          align-items: flex-start;
+          justify-content: flex-start;
+          width: 98%;
+          height: 90px;
+          color: #353535;
+          // margin-bottom: 5px;
+          div {
+            // background-color: rosybrown;
+            width: 100%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+          }
+          h3{
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+          small {
+            font-style: italic;
+            font-size: 1rem;
+          }
         }
-        h3 {
-          font-size: 2.2vmax;
-          font-weight: bold;
-        }
-        small {
-          font-style: italic;
+        .listening {
+          height: 220px;
+          h4 {
+            font-weight: bold;
+            font-size: 1rem;
+          }
         }
       }
-      .listening {
-        height: 250px;
-        h4 {
-          font-weight: bold;
-        }
-      }
+  
     }
   }
     }
@@ -307,9 +296,6 @@ main {
         background-color: #FFF1EE;
         width: 100%;
         font-size: 0.9rem;
-        &:nth-of-type(7) {
-          margin-bottom: 2vh;
-        }
         .experience-info {
           background-color: #FFF1EE;
           height: 2.5em;
@@ -327,6 +313,25 @@ main {
             padding: 0 0.5rem;
             &:focus {
               font-weight: bold;
+            }
+
+            .endHeaderContainer {
+              min-width: 0;
+              display: flex;
+              justify-content: flex-end;
+            }
+
+            .current {
+              font-size: 1.1em;
+              text-transform: uppercase;
+              color: transparent;
+              -webkit-text-stroke-width: 1px;
+              -webkit-text-stroke-color: rgb(116, 114, 114);
+              letter-spacing: 0.2em;
+              text-shadow: 0.5em 0.5em 1em #f5f5f5, 0 0 1em #353535, 0 0 0.2em #353535;
+              display: flex;
+              justify-self: flex-start;
+              padding: 0.2em 0.5em;
             }
           }
       }
@@ -390,6 +395,7 @@ main {
           font-size: 0.9em;
           display: flex;
           justify-content: space-between;
+          align-items: center;
           align-self: center;
         }
       }
@@ -426,12 +432,10 @@ main {
       h2 {
         display: flex;
         align-self: flex-start;
-        font-size: 5vmin;
+        font-size: 1.2rem;
         font-weight: bold;
       }
       .confident-skills, .comfortable-skills, .dabbled-skills{
-        // background-color: green;
-        // height: 37vh;
         width: 95%;
         display: flex;
         align-items: center;
@@ -441,7 +445,7 @@ main {
         .icon {
           height: 9vh;
           width: 15vw;
-          font-size: 5vmax;
+          font-size: 2rem;
           color: #353535;
           margin-bottom: 10px;
           display: flex;
@@ -449,19 +453,25 @@ main {
           &:hover {
             color: #C9C8C8;
             p {
-              background-color: #FFFEFE;
-              color: #353535;
+              background-color: #353535a1;
+              color: #FFFEFE;
               opacity: 1;
+              border-radius: 0.2rem;
             }
           }          
           p {
-            font-size: 3.5vmin;
+            font-size: 0.8rem;
             position: absolute;
             color: #353535;
             font-weight: bold;
-            padding: 0 3vmin;
+            padding: 0 1rem;
             text-align: center;
             opacity: 0;
+          }
+        }
+        #Express, #Django, #Babel, #NPM {
+          i {
+            font-size: 3.1rem;
           }
         }
         img {
@@ -498,24 +508,60 @@ main {
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
+      .titleContainer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+          font-size: 1.7em;
+          display: flex;
+          align-self: flex-start;
+          font-weight: bold;
+        }
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 0.3rem;
+          border: 0.1em solid #E2D7D4;
+          background: transparent;
+          color: #353535;
+          border-radius: 5px;
+          font-weight: bold;
+          outline: none;
+          font-family: 'Aleo', sans-serif;
+        }
+
+      }
+
+      .imageContainer {
+        height: 200px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #desktopImage {
+          display: none;
+        }
+        img {
+          height: 90%;
+          margin: 0.5em;
+        }
+      }
+
+      img {
+        margin: 0.5em;
+      }
       p {
-        font-size: 0.7em;
+        font-size: 0.75em;
         width: 98%;
       }
-      img {
-        max-height: 25vh;
-        max-width: 98%;
-        margin: 1.3em;
-      }
-      h1 {
-        font-size: 1.7em;
-        display: flex;
-        align-self: flex-start;
-        font-weight: bold;
-      }
       .project-notes {
-        // background-color: yellow;
-        @include HWD(310px, auto, flex ,column, center,space-between )
+        @include HWD(330px, auto, flex ,column, center,space-between )
       }
       .description {
         // background-color: indianred;
@@ -544,16 +590,15 @@ main {
           margin: 0 1.3em;
           p {
             margin: 1vmin;
-            font-size: 2.8vmin;
+            font-size: 0.7rem;
             width: auto;
           }
         }
       }
-      .project-links {
-        
+      .project-links {  
         width: 100%;
-        height: 30px;
-        font-size: 1.2em;
+        height: 50px;
+        font-size: 1.6em;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -614,7 +659,7 @@ main {
 }
 
 .contact {
-  height: 80vh;
+  height: 85vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -653,14 +698,13 @@ main {
     }
   }
   .form {
-    height: 60%;
-    // background-color: salmon;
+    height: 75%;
     form {
       height: 100%;
       display: flex;
       flex-direction: column;
       width: 100%;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
       .short-inputs {
         height: 40%;
@@ -681,26 +725,45 @@ main {
           box-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.45), 0 0 30px rgba(255,255,255,0.25), 0 0 30px rgba(255,255,255,0.1) !important;
         }
       }
+      .message-container {
+        // background-color: green;
+        height: 47%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
       .message {
-        height: 60%;
+        height: 85%;
         width: 95vw;
         background-color: #FFFEFE;
         padding: 2px;
+        margin: 0;
         &:focus {
           outline: none;
           border: 2px double #FFFEFE;
           box-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.45), 0 0 30px rgba(255,255,255,0.25), 0 0 30px rgba(255,255,255,0.1) !important;
         }
       }
+      label {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      small {
+        font-style: italic;
+        color: #ff0033;
+      }
       button {
+        display: inline-block;
         background-color: #FFFEFE;
         height: 6vh;
         font-size: 1em;
-        width: 30vw;
+        padding: 1rem;
         border-radius: 5px;
         font-family: 'Aleo', sans-serif;
         color: #353535;
         border: 2px solid #C9C8C8;
+        // margin: 0;
       }
     }
   }
@@ -713,6 +776,7 @@ main {
   align-items: center;
   font-size: 5vmax;
   text-align: center;
+
   h1 {
     font-size: 5vmin;
   }
@@ -742,13 +806,16 @@ main {
 
 @keyframes bounce {
   0% {
-    color: #353535
-  }
-  50% {
-    color: #999898;
+    border: none;
+    width: 0%;
+    overflow: hidden;
+    padding: 0;
   }
   100% {
-    color: #C9C8C8;
+    border: 0.2em inset #E2D7D4;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.2rem;
   }
 }
 
@@ -790,15 +857,15 @@ main {
     overflow: hidden;
   }
   100% {
-    height: 4.5em;
-    overflow: hidden;
+    height: 6.9em;
+    overflow: scroll;
   }
 }
 
 @keyframes hideRole {
   0% {
-    height: 4.5em;
-    overflow: hidden
+    height: 6.9em;
+    overflow: hidden;
   }
   100% {
     height: 0em;
@@ -836,30 +903,6 @@ main {
   }
 }
 
-
-@keyframes showInfo {
-  0% {
-    height: 0em;
-    width: 0em;
-    overflow: hidden;
-    opacity: 0;
-    border: none;
-}
-50% {
-  height: 0em;
-  width: 90%;
-  overflow: hidden;
-  opacity: 0.5;
-  border: none;
-}
-100% {
-  height: 10em;
-  width: 90%;
-  overflow: hidden;
-  opacity: 1;
-  border: 0.5em double #353535;
-}
-}
 
 @keyframes hideInfo {
   0% {
@@ -914,16 +957,142 @@ main {
   }
 }
 
+@media only screen and (min-height: 0px) and (max-height: 568px) {
 
-@media only screen and (min-width: 650px) {
+  #about-me, #projects { 
+    height: 20vh;
+    background-image: linear-gradient(#FFF1EE, #FFFEFE)
+  }
+  
+  #skills, #contact {
+    height: 20vh;
+    width: 100vw;
+    background-image: linear-gradient( #FFFEFE ,#FFF1EE)
+  }
   .homepage {
-    // background-color: lightgrey;
+    .introduction {
+      width: 90%;
+      p {
+        font-size: 1.65rem;
+      }
+      .innerBorder {
+      height: 6rem;
+        p {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+
+  // NavBar
+
+  .header {
+    div {
+      height: 100%;
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .about-me {
+    .brand-statement {
+      height: 70vh;
+      justify-content: space-between;
+      .statement {
+        font-size: 0.74rem;
+        padding: 1rem 0;
+      }
+    }
+
+    .outside-coding {
+      .interests {
+        span {
+          font-size: 0.7rem;
+        }
+        .interests-container {
+          .interest {
+            height: 80px;
+            h3 {
+              font-size: 1rem;
+            }
+            div {
+              font-size: 1rem;
+              small {
+                font-size: 0.8rem;
+              }
+            }
+          }
+          .listening {
+            height: 190px;
+          }
+        }
+      }
+    }
+
+    .experience-container {
+      height: 90vh;
+    }
+  }
+
+  .projects {
+    // height: 80vh;
+    .react-tabs {
+      .react-tabs__tab-list {
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+      }
+    }
+    .selected-project {
+      height: 80vh;
+      .titleContainer {
+        h1 {
+          font-size: 1.1rem;
+        }
+        button {
+          font-size: 0.7rem;
+        }
+      }
+
+      .imageContainer, .singleImage {
+        height: 110px;
+      }
+
+
+      .project-notes {
+        height: auto;
+
+        .description {
+          .skills {
+            max-height: 100px;
+            h5, p {
+              font-size: 0.62rem;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.7rem;
+        }
+
+        .project-links {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .homepage {
     .introduction {
       p {
-      font-size: 5vmin;
+      font-size: 2.4rem;
       }
-      .learn-more {
-        font-size: 2em;
+      .innerBorder {
+        p, span {
+          font-size: 1rem;
+        }
       }
     }
     .header {
@@ -931,7 +1100,6 @@ main {
       .navbar {
         ul {
           li {
-            font-size: 0.5em;
             align-items: center;
             justify-content: center;
             a {
@@ -941,10 +1109,6 @@ main {
         }
       }
     }
-  .currently {
-    font-size: 1em;
-    width: 80%;
-  }
 }
 
 .about-me {
@@ -954,34 +1118,36 @@ main {
   .brand-statement {
     .brand-header {
       height: 10vh;
-      h2 {
-        font-size: 4vmin;
+      h2, .icon {
+        font-size: 1.3rem;
       }
-      .icon {
-        font-size: 3vmin;
+      img {
+        height: 4.3vh;
       }
     }
     .statement {
       height: 80vh;
-      font-size: 2.5vmin;
+      font-size: 1.1rem;
     }
   }
-  .interests {
-    span {
-      font-size: 2vmin !important;
+
+  .outside-coding {
+
+    .interests {
+      span {
+        font-size: 0.8rem;
+      }
+      .interest {
+        // background-color: tan;
+        h3 {
+          font-size: 1.1rem;
+        }
+        p, h4 {
+          font-size: 1rem;
+        }
+      }
     }
-    .interest {
-      // background-color: tan;
-      h3 {
-        font-size: 3vmin !important;
-      }
-      h4 {
-        font-size:  2.5vmin !important;
-      }
-      p {
-        font-size: 2.3vmin !important;
-      }
-    }
+    
   }
  .experience-container {
    justify-content: space-evenly;
@@ -1025,17 +1191,11 @@ main {
    .skills-container {
      .skills {
       h2 {
-        font-size: 3.7vmin;
+        font-size: 1.2rem;
       }
        .confident-skills, .comfortable-skills, .dabbled-skills {
          .icon {
-           font-size: 3em;
-           img, #JSON {
-            width: 5.5vw !important;
-          }
-          #bulma {
-            width: 5vw !important;
-          }
+           font-size: 2.4em;
           p {
             font-size: 0.4em;
           }
@@ -1048,25 +1208,38 @@ main {
 
 .projects {
   // background-color: yellow;
-  height: 94vh;
   .selected-project {
-    min-height: 650px;
-    img {
+    min-height: 700px;
+    .singleImage {
+      width: 70%;
       margin: 0;
     }
+
+    .titleContainer {
+      button {
+        font-size: 1rem;
+      }
+    }
+
+    .imageContainer {
+      img {
+        height: 100%;
+        max-width: 100%;
+        margin: 0;
+      }
+    }
     .project-notes {
-      // background-color: yellow;
+      height: 350px;
       .description {
-        // background-color: firebrick;
         .skills {
           height: 100%;
           h5, p {
-            font-size: small;
+            font-size: 0.8em;
           }
         }
       }
       p {
-        font-size: 0.8em;
+        font-size: 0.85em;
       }
       .project-links {
         font-size: 1.7em;
@@ -1098,7 +1271,7 @@ main {
     font-size: 4vmin;
   }
   .form {
-    width: 85%;
+    width: 95%;
     height: 60%;
     margin: 0;
     display: flex;
@@ -1114,15 +1287,12 @@ main {
         input {
           width: 100%;
           height: 5vh;
-          font-size: 2.5vmin;
+          font-size: 1rem;
         }
       }
       .message {
         height: 40vh;
-        font-size: 2.5vmin;
-      }
-      button {
-        width: 20%;
+        font-size: 1rem;
       }
     }
   }
@@ -1131,27 +1301,41 @@ main {
 
 .footer {
   div {
-    font-size: 3vmin;
+    font-size: 1.5rem;
   }
 }
 
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 768px) {
   .homepage {
-    // background-color: maroon;
-    .learn-more, .currently {
-      width: 42% !important;
+    .introduction {
+      width: 75%;
+      p {
+        font-size: 3rem;
+      }
+      .innerBorder {
+        height: 13rem;
+        p {
+          font-size: 1.3rem;
+        }
+      }
     }
   }
   .about-me {
-    .brand-header {
-      img {
-        height: 5vh !important;
+
+    .brand-statement {
+
+      .brand-header {
+        width: 95%;
+        h2, .icon {
+          font-size: 2rem;
+        }
+        img {
+          height: 6vh;
+        } 
       }
-    }
-    .statement {
-      font-size: 2vmin !important;
+
     }
     .outside-coding {
       // background-color: thistle;
@@ -1161,54 +1345,64 @@ main {
       justify-content: space-between;
       border-bottom: none;
       border-top: none;
-      .interests-container {
-        height: 50% !important;
-        margin-top: 1vmin;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        .interest {
-          // border: 0.2vmin solid #FFF1EE;
-          box-shadow: 0 0 30px rgba(255, 241, 238, 0.644), 0 0 30px rgba(255,241,238,0.45), 0 0 30px rgba(255,241,238,0.25), 0 0 30px rgba(255,241,238,0.1);
-          // border-radius: 2vmax;
-          width: 30vw !important;
-          height: 32vh !important;
-          padding: 10px;
-          align-items: center !important;
-          justify-content: space-between !important;
-          div {
-            height: 100% !important;
-            p {
-              font-size: 2vmin !important;
-            }
-          }
-          h3 {
-            font-size: 2.5vmin !important;
-          }
+      
+      .interests {
+        // background-color: yellow;
+        height: 100%;
+       span {
+          font-size: 1.1rem;
         }
-        .listening {
-          // background-color: lightpink;
-          padding: 10 25px;
-          div {
-            display: flex !important;
-            flex-direction: column;
+
+        .interests-container {
+          margin-top: 1rem;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .interest {
+            box-shadow: 0 0 30px rgba(255, 241, 238, 0.644), 0 0 30px rgba(255,241,238,0.45), 0 0 30px rgba(255,241,238,0.25), 0 0 30px rgba(255,241,238,0.1);
+            width: 33%;
+            height: 80%;
+            padding: 10px;
             align-items: center;
-            h4 {
-              font-size: 2vmin !important;
+            justify-content: space-between;
+            div {
+              height: 100%;
+            }
+            h3{
+              font-size: 1.5rem;
             }
             p {
-              text-align: center;
+              font-size: 1.2rem;
             }
-          
+            small {
+              font-size: 1rem;
+            }
+          }
+
+          .listening {
+            padding: 10 25px;
+            div {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              p {
+                text-align: center;
+              }
+            
+            }
           }
         }
+
       }
     }
+
+
     .experience {
       margin-bottom: 2vh;
-      width: 48%;
+      width: 49%;
       .multiple-role-info {
         .roles-header {
-        font-size: 0.8em;
+        font-size: 0.85em;
         strong {
           display: flex;
           flex-wrap: wrap;
@@ -1216,20 +1410,69 @@ main {
         }
         .expanded-info {
           margin-top: 1em;
+          font-size: 1em;
+        }
+      }
+      .expMoreInfo {
+        .single-expereince-expand {
           font-size: 0.9em;
         }
       }
     }
   }
+
+.skills  {
+  .skills-container {
+    .skills {
+      font-size: 1.25rem;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      #Babel, #Express, #Django, #NPM {
+        i {
+          font-size: 5rem !important;
+        }
+      }
+    }
+  }
+}
+
 .modal-content {
   width: 60% !important;
+}
+
+
+.projects {
+  .selected-project {
+
+    .titleContainer {
+      button {
+        padding: 0.5rem;
+      }
+    }
+
+    .singleImage {
+      width: 60%;
+      margin: 0.5rem 0;
+    }
+
+    .project-notes {
+      font-size: 1.1rem;
+    }
+  }
 }
 .contact {
   height: 100vh;
   .form {
     form {
+      input, .message {
+        font-size: 1.2rem;
+      }
       button {
-        font-size: 1.2em;
+        font-size: 1.2rem;
+        padding: 0.5em;
       }
     }
   }
@@ -1238,19 +1481,43 @@ main {
 
 @media only screen and (min-width: 1000px) {
 
+  .homepage {
+    
+    .introduction {
+      .innerBorder {
+        
+        p, span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .header {
+      h1 {
+        font-size: 2.5rem;
+      }
+      .navbar {
+        ul {
+          a {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
   .roles-header {
     .expanded-header {
-      font-size: 1.3em !important;
-      }
-    .expanded-info {
-      font-size: 1em !important;
+      font-size: 1.1em !important;
       }
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .homepage {
-    // background-color: gray;
+    
+    .introduction {
+      width: 50%;
+    }
   }
   .modal {
     .modal-content {
@@ -1258,28 +1525,31 @@ main {
       height: 35%;
     }
   }
+
   .projects {
     .selected-project {
-      h1 {
-        font-size: 2em;
+      .imageContainer {
+        height: 270px;
       }
-      img {
-        margin-bottom: 0.5em;
+      .singleImage {
+        width: 50%;
       }
       .project-notes {
-        height: 370px;
-        p, h5 {
-          font-size: 1.2em;
+        p {
+          font-size: 0.95em;
         }
         .description {
           .skills {
-            p, h5 {
-              font-size: 1.1em;
+            h5 {
+              font-size: 1em;
+            }
+            p {
+              font-size: 0.9em;
             }
           }
         }
         .project-links {
-          font-size: 2em;
+          font-size: 1.75em;
         }
       }
     }
@@ -1293,45 +1563,98 @@ main {
 
 @media only screen and (min-width: 1500px) {
   .homepage {
-    // background-color: fuchsia;
-    .learn-more {
-      width: 20% !important;
-    }
-    .brand-header {
-      h2 {
-        font-size: 4.5vmin !important;
-      }
+    .introduction {
+      width: 25%;
     }
   }
-  .outside-coding {
-    // background-color: thistle;
-    width: 75% !important;
-  }
-  .experience {
-    width: 32% !important;
-    .multiple-role-info {
-      .roles-header {
-        .expanded-header {
-      strong {
+
+  .about-me {
+    .brand-statement {
+
+      .brand-header {
         width: auto;
+        h2 {
+          margin: 0 5rem;
+        }
+      }
+
+      .statement {
+        font-size: 1.5rem;
       }
     }
+
+    .outside-coding {
+      .interests {
+        .interests-container {
+          .interest {
+            width: 30%;
+            h3 {
+              font-size: 1.9rem;
+            }
+            p {
+              font-size: 1.5rem;
+            }
+            small {
+              font-size: 1.2rem;
+            }
+          }
+      } 
     }
-      .expanded-info {
-        margin: 0;
-        p { font-size: 1.2em;
+  }
+}
+
+  .experience-container {
+    .roles {
+      justify-content: space-between;
+      .experience {
+        width: 32%;
+        font-size: 1.2rem;
+
+        .endHeaderContainer {
+          align-items: center;
+        }
+        .multiple-role-info {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    
+  }
+
+  .skills {
+    .skills-container {
+      .skills {
+        font-size: 1.4rem;
+      }
+      .confident-skills, .comfortable-skills, .dabbled-skills {
+        #Django, #Express, #Babel, #NPM {
+          i {
+            font-size: 6.1rem !important;
+          }
         }
       }
     }
   }
-  .skills {
-    img {
-      height: 5vh !important;
-      max-width: 3vw !important;
+
+  .projects {
+    .react-tabs {
+      .react-tabs__tab-list {
+        font-size: 1.2rem;
+      }
     }
-    #JSON {
-      height: 18% !important;
-      max-width: 20% !important;
+    .selected-project {
+      .titleContainer {
+        .button {
+          padding: 1rem;
+          font-size: 2rem;
+        }
+      }
+      .singleImage {
+        width: 40%;
+      }
+      .project-notes {
+        font-size: 1.4rem;
+      }
     }
   }
   .modal {
@@ -1345,12 +1668,5 @@ main {
   }
   .contact {
     height: 100vh;
-    .form {
-      form {
-        button {
-          width: 200px;
-        }
-      }
-    }
   }
 }

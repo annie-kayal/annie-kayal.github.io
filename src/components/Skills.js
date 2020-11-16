@@ -104,6 +104,10 @@ const Skills = () => {
     {
       name: 'TypeScript',
       icon: <i className="devicon-typescript-plain"></i>
+    },
+    {
+      name: 'Emotion',
+      icon: <img src='https://emotion.sh/static/a76dfa0d18a0536af9e917cdb8f873b9/b46be/emotion.webp'/>
     }
   ]
 
@@ -113,7 +117,7 @@ const Skills = () => {
         <h2>Confident:</h2>
         <div className="confident-skills">
           {confidentSkills.map((skill, key) => {
-            return <div key={key} className="icon">
+            return <div id={skill.name} key={key} className="icon">
               {skill.icon}
               <p>{skill.name}</p>
             </div>
@@ -126,7 +130,7 @@ const Skills = () => {
         <h2>Comfortable:</h2>
         <div className="comfortable-skills">
           {comfortableSkills.map((skill, key) => {
-            return <div key={key} className="icon">
+            return <div id={skill.name} key={key} className="icon">
               {skill.icon}
               <p>{skill.name}</p>
             </div>
